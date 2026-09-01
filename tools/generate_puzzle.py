@@ -162,6 +162,10 @@ FILL_BANK.update({
 
     "TAKEN": "Already occupied", "NON": "___-stop meaning without a break",
     "MASON": "Worker in stone",
+
+    "GAMMA": "Third Greek letter", "GAP": "Space between",
+    "MEDAL": "Winner's disc", "NAIL": "Hammer's target",
+    "OLD": "Not young", "SALAD": "Bowl of greens",
 })
 
 

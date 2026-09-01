@@ -371,6 +371,10 @@
       <span id="timerLabel">0:00</span>
     </div>
     <div class="actions">
+      <input type="date" id="datePicker" title="Play a previous day's puzzle" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:1px solid var(--rule);border-radius:7px;padding:5px 8px;background:var(--paper-card);color:var(--ink);cursor:pointer;">
+      <button class="iconbtn" id="todayBtn" title="Back to today's puzzle" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      </button>
       <select id="themeSelect" title="Choose a theme" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:1px solid var(--rule);border-radius:7px;padding:5px 8px;background:var(--paper-card);color:var(--ink);cursor:pointer;"></select>
       <button class="iconbtn" id="rebusBtn" title="Restart puzzle">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.3"/><path d="M21 3v6h-6"/></svg>
@@ -463,11 +467,45 @@ const THEMES = [
   { id: 'motorcycling', label: 'Motorcycling' },
 ];
 
-function puzzleIndexForToday(bankLength){
-  const epoch = Date.UTC(2024, 0, 1); // fixed reference point so the rotation is stable across visits
-  const now = new Date();
-  const todayUTC = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
-  const daysSince = Math.floor((todayUTC - epoch) / 86400000);
+const EPOCH_UTC = Date.UTC(2024, 0, 1); // fixed reference point so the rotation is stable across visits
+
+/* All date maths is done in UTC day-numbers so a puzzle can't shift by one
+   for players either side of midnight or in a different timezone. */
+function todayUTC(){
+  const n = new Date();
+  return Date.UTC(n.getFullYear(), n.getMonth(), n.getDate());
+}
+
+function toISODate(ts){
+  const d = new Date(ts);
+  return `${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')}`;
+}
+
+/* Parse YYYY-MM-DD strictly. Returns null for anything malformed or for
+   impossible dates like 2026-02-31, which Date would otherwise roll over. */
+function parseISODate(str){
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(str || '');
+  if(!m) return null;
+  const y = +m[1], mo = +m[2], d = +m[3];
+  const ts = Date.UTC(y, mo - 1, d);
+  const back = new Date(ts);
+  if(back.getUTCFullYear() !== y || back.getUTCMonth() !== mo - 1 || back.getUTCDate() !== d) return null;
+  return ts;
+}
+
+/* Clamp any requested day into [EPOCH_UTC, today]. The date picker's max
+   attribute stops most forward travel, but the ?date= param is editable by
+   hand, so the clamp here is what actually guarantees no future puzzles. */
+function clampToPlayableDay(ts){
+  const today = todayUTC();
+  if(ts === null || Number.isNaN(ts)) return today;
+  if(ts > today) return today;
+  if(ts < EPOCH_UTC) return EPOCH_UTC;
+  return ts;
+}
+
+function puzzleIndexForDate(ts, bankLength){
+  const daysSince = Math.floor((ts - EPOCH_UTC) / 86400000);
   return ((daysSince % bankLength) + bankLength) % bankLength;
 }
 
@@ -861,8 +899,9 @@ function checkSolved(){
 /* ============================================================
    INIT
    ============================================================ */
-document.getElementById('dateLabel').textContent = new Date().toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
-document.getElementById('puzzleLabel').textContent = `Puzzle ${PUZZLE_INDEX + 1} of ${PUZZLE_BANK_LEN}`;
+document.getElementById('dateLabel').textContent = new Date(SELECTED_DAY).toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric', timeZone:'UTC' });
+document.getElementById('puzzleLabel').textContent =
+  `Puzzle ${PUZZLE_INDEX + 1} of ${PUZZLE_BANK_LEN}` + (SELECTED_DAY === todayUTC() ? '' : ' · from the archive');
 selectCell(0,0,true);
 hiddenInput.focus();
 }
@@ -889,11 +928,50 @@ themeSelect.addEventListener('change', ()=>{
   location.href = url.toString();
 });
 
+/* ---- Date picker: play any past day, never a future one ----
+   ?date=YYYY-MM-DD selects the day. Anything missing, malformed or in the
+   future falls back to today via clampToPlayableDay(), so a hand-edited URL
+   can't reach tomorrow's puzzle. Changing the date reloads with a new
+   ?date=, mirroring how the theme switch already works. */
+const SELECTED_DAY = clampToPlayableDay(parseISODate(params.get('date')));
+const IS_TODAY = SELECTED_DAY === todayUTC();
+
+const datePicker = document.getElementById('datePicker');
+datePicker.min = toISODate(EPOCH_UTC);
+datePicker.max = toISODate(todayUTC());   // browser-level block on forward travel
+datePicker.value = toISODate(SELECTED_DAY);
+
+datePicker.addEventListener('change', ()=>{
+  const picked = clampToPlayableDay(parseISODate(datePicker.value));
+  const url = new URL(location.href);
+  if(picked === todayUTC()) url.searchParams.delete('date');  // keep today's URL clean
+  else url.searchParams.set('date', toISODate(picked));
+  location.href = url.toString();
+});
+
+/* A one-tap way back to today, shown only when it would do something. */
+const todayBtn = document.getElementById('todayBtn');
+todayBtn.hidden = IS_TODAY;
+todayBtn.addEventListener('click', ()=>{
+  const url = new URL(location.href);
+  url.searchParams.delete('date');
+  location.href = url.toString();
+});
+
+/* If the URL asked for a day we had to clamp, correct the address bar so a
+   refresh or a shared link doesn't keep re-triggering the clamp. */
+if(params.get('date') && params.get('date') !== toISODate(SELECTED_DAY)){
+  const url = new URL(location.href);
+  if(IS_TODAY) url.searchParams.delete('date');
+  else url.searchParams.set('date', toISODate(SELECTED_DAY));
+  history.replaceState(null, '', url.toString());
+}
+
 fetch(`puzzles/${CURRENT_THEME}.json`)
   .then(res => { if(!res.ok) throw new Error(`${res.status}`); return res.json(); })
   .then(bank => {
     PUZZLE_BANK_LEN = bank.length;
-    PUZZLE_INDEX = puzzleIndexForToday(PUZZLE_BANK_LEN);
+    PUZZLE_INDEX = puzzleIndexForDate(SELECTED_DAY, PUZZLE_BANK_LEN);
     ({ solution: SOLUTION, clues: CLUES } = buildPuzzle(bank[PUZZLE_INDEX]));
     startGame();
   })

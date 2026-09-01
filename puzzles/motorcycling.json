@@ -48,98 +48,6 @@
   {
     "across": {
       "1": [
-        "ATE",
-        "Had dinner"
-      ],
-      "9": [
-        "YET",
-        "Not ___ (still pending)"
-      ],
-      "5": [
-        "LIVES",
-        "Exists"
-      ],
-      "7": [
-        "IDEAS",
-        "Brainwave results"
-      ],
-      "8": [
-        "VERSE",
-        "A poem's stanza"
-      ]
-    },
-    "down": {
-      "3": [
-        "EVERY",
-        "Each, without exception"
-      ],
-      "4": [
-        "ASSET",
-        "Valuable resource"
-      ],
-      "6": [
-        "EASE",
-        "Freedom from effort"
-      ],
-      "2": [
-        "TIDE",
-        "The sea's rise and fall"
-      ],
-      "1": [
-        "ALIVE",
-        "Still living"
-      ]
-    }
-  },
-  {
-    "across": {
-      "1": [
-        "ARM",
-        "Limb with a hand"
-      ],
-      "7": [
-        "ISSUE",
-        "Topic under discussion"
-      ],
-      "8": [
-        "STORE",
-        "Shop"
-      ],
-      "5": [
-        "REACH",
-        "Stretch out to touch"
-      ],
-      "9": [
-        "NET",
-        "Fishing gear, or a total after deductions"
-      ]
-    },
-    "down": {
-      "2": [
-        "REST",
-        "Take a break"
-      ],
-      "3": [
-        "MASON",
-        "Bricklayer"
-      ],
-      "1": [
-        "ARISE",
-        "Get up"
-      ],
-      "6": [
-        "CURE",
-        "Remedy for an ailment"
-      ],
-      "4": [
-        "SHEET",
-        "Bed linen"
-      ]
-    }
-  },
-  {
-    "across": {
-      "1": [
         "MOD",
         "Scooter-riding rival of the rockers"
       ],
@@ -502,6 +410,98 @@
       "4": [
         "ASSEN",
         "Dutch venue called the Cathedral of Speed"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "THE",
+        "Commonest word in English"
+      ],
+      "9": [
+        "DRY",
+        "Sort of tyre for sunshine"
+      ],
+      "7": [
+        "ELDER",
+        "Older, more senior person"
+      ],
+      "8": [
+        "IDEAL",
+        "Just perfect"
+      ],
+      "5": [
+        "HONDA",
+        "Japanese maker of the Fireblade"
+      ]
+    },
+    "down": {
+      "3": [
+        "ENDED",
+        "Brought to a close"
+      ],
+      "2": [
+        "HOLD",
+        "Keep a grip on"
+      ],
+      "1": [
+        "THEIR",
+        "Belonging to them"
+      ],
+      "4": [
+        "EARLY",
+        "Ahead of time"
+      ],
+      "6": [
+        "DEAR",
+        "Costly or much loved"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "GAP",
+        "Space between"
+      ],
+      "5": [
+        "ARENA",
+        "Sports venue"
+      ],
+      "7": [
+        "MEDAL",
+        "Winner's disc"
+      ],
+      "8": [
+        "MARIA",
+        "West Side Story song"
+      ],
+      "9": [
+        "OLD",
+        "Not young"
+      ]
+    },
+    "down": {
+      "2": [
+        "AREA",
+        "Region"
+      ],
+      "1": [
+        "GAMMA",
+        "Third Greek letter"
+      ],
+      "3": [
+        "PEDRO",
+        "Acosta the young Spanish star"
+      ],
+      "6": [
+        "NAIL",
+        "Hammer's target"
+      ],
+      "4": [
+        "SALAD",
+        "Bowl of greens"
       ]
     }
   }
