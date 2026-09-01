@@ -1,10 +1,219 @@
+# motorcycling.csv — word,clue
+# NOTE: the 5x5 grid only ever places 3-, 4- and 5-letter words.
+# Anything 6+ is silently dropped by build_pools(), so DUCATI/YAMAHA/
+# APRILIA/TOPRAK/MARQUEZ/BAGNAIA etc. cannot be used at this grid size.
+# Each puzzle needs 6 five-letter / 2 four-letter / 2 three-letter words,
+# so 5-letter entries are the most valuable thing to add here.
+# Clues must not contain commas — the loader takes row[1] only and
+# would silently truncate at the first comma.
+
+# --- riding + racing terms ---
 APEX,Fastest point through a corner
-DUCATI,Bologna-based bike maker
-GRID,Starting formation on the track
-VISOR,Helmet's clear front shield
 LEAN,What a rider does into a turn
-BSB,British Superbike series abbreviation
-CHAIN,Drivetrain part that needs lubing
-KTM,Austrian bike manufacturer, in orange
+GRID,Starting formation on the track
 PIT,Where a bike gets serviced mid-race
+LAP,One time around the circuit
+LAPS,Circuit circuits
+RACE,Sunday's main event
+RACER,One who competes on two wheels
+RIDER,Person aboard the bike
+RIDE,Take the bike out
+BIKE,The machine itself
+BIKES,Machines in the paddock
+BIKER,Leather-clad motorcyclist
+MOTO,Prefix for GP classes 2 and 3
+TRACK,Where the racing happens
+LINE,The racing ___ through a bend
+POLE,Front spot on the grid
+FLAG,Chequered race-ender
+START,Lights-out moment
+TITLE,What a champion wins
+CROWN,Championship honour
+SPEED,What the radar trap measures
+POWER,What the engine makes
+PACE,Rate of lap times
+STINT,Run of laps before a stop
+DRAFT,Slipstream behind a rival
+TOW,Slipstream help down the straight
+BEND,Curve in the road
+BENDS,Twisty bits
+TURN,Corner on a circuit
+ESSES,Linked S-shaped curves
+KERB,Circuit edging a rider clips
+SLIDE,Loss of grip sideways
+DRIFT,Rear-end slide through a turn
+TUCK,Crouch behind the screen for speed
+KNEE,Body part that touches down in a corner
+ELBOW,Joint modern riders drag on the deck
+STAND,Paddock support for a parked bike
+BOX,Team's pit garage
+TEAM,Outfit in the paddock
+CREW,The mechanics
+WET,Sort of tyre for rain
+DRY,Sort of tyre for sunshine
+RAIN,Reason for wet tyres
+ROAD,Public riding surface
+LANE,Filtering spot in traffic
+TON,Doing the ___ is 100mph in biker slang
+CAFE,___ racer with stripped-down style
+ACE,London's ___ Cafe biker landmark
+MOD,Scooter-riding rival of the rockers
+TRIAL,Off-road balance and obstacle event
+
+# --- parts of the bike ---
+CHAIN,Drivetrain part that needs lubing
 TYRE,Rubber that meets the tarmac
+VISOR,Helmet's clear front shield
+BRAKE,What the lever applies
+LEVER,Hand control on the bar
+FORK,Front suspension leg
+FORKS,Front suspension pair
+SHOCK,Rear suspension absorber
+FRAME,The bike's skeleton
+TANK,It holds the fuel
+SEAT,Where the rider sits
+SPOKE,Wire in a wheel
+WHEEL,Round thing that turns
+RIM,Outer edge of the wheel
+HUB,Wheel's centre
+AXLE,Rod the wheel spins on
+MOTOR,The engine
+VALVE,Head component that opens and closes
+CAM,Shaft lobe that works the valves
+ROTOR,Disc the pads clamp
+DISC,Brake ___ gripped by the caliper
+PADS,Friction bits in the caliper
+GEAR,One of six on the box
+GEARS,The whole box of them
+CABLE,Sheathed control wire
+GRIP,Handlebar rubber
+GRIPS,Bar rubbers
+BARS,What the rider steers with
+PEGS,Where the boots rest
+PEG,Single footrest
+PLUG,Spark ___ that fires the mix
+PLUGS,Ignition sparkers
+COIL,Ignition component
+OIL,What needs changing every service
+FUEL,Tank's contents
+PIPE,Exhaust section
+PIPES,Full exhaust system
+HOSE,Coolant carrier
+BOLT,Threaded fastener
+NUT,Bolt's partner
+LINK,One piece of the chain
+LINKS,Chain segments
+TREAD,Tyre's grooved pattern
+TUBE,Inner ___ in an older tyre
+YOKE,Triple clamp holding the forks
+CLAMP,Triple ___ at the fork tops
+SEAL,Fork oil keeper
+SEALS,Fork oil keepers
+CARB,Pre-injection fuel mixer
+FUSE,Electrical safety part
+WIRE,Loom strand
+LOOM,Bike's wiring bundle
+SLICK,Treadless racing tyre
+BOOTS,Rider's footwear
+LID,Slang for a helmet
+REV,Blip the throttle
+REVS,Engine speed
+IDLE,Tickover
+CHOKE,Cold-start aid
+BELT,Drive alternative to a chain
+
+# --- UK + European circuits (3-5 letters only) ---
+ASSEN,Dutch venue called the Cathedral of Speed
+BRNO,Czech circuit at Masaryk
+JEREZ,Andalusian Spanish GP circuit
+IMOLA,Italian circuit on the Santerno
+MONZA,Italian temple of speed
+SPA,Belgian circuit at Francorchamps
+MOST,Czech venue on the WSBK calendar
+CROFT,North Yorkshire BSB circuit
+HATCH,Brands ___ in Kent
+MANS,Le ___ French GP venue
+PARK,Oulton or Cadwell ___
+IOM,Isle of Man in short
+
+# --- riders of the last decade ---
+ROSSI,Valentino with nine world titles
+REA,Jonathan with six WSBK crowns
+MARC,Marquez of MotoGP
+ALEIX,Elder Espargaro brother
+POL,Younger Espargaro brother
+PECCO,Bagnaia's nickname
+FABIO,Quartararo who took the 2021 title
+MIR,Joan who won the 2020 MotoGP crown
+JOAN,Mir's first name
+BRAD,Binder from South Africa
+JACK,Miller the Australian
+ZARCO,Johann the French veteran
+RINS,Alex who has won on three brands
+ALEX,Marquez or Rins or Lowes
+DOVI,Dovizioso to his fans
+CAL,Crutchlow the British GP winner
+DANI,Pedrosa the Honda great
+SMITH,Bradley of British GP fame
+SCOTT,Redding the 2019 BSB champion
+BRADL,Stefan the Honda test rider
+SYKES,Tom the 2013 WSBK champion
+CHAZ,Davies the Welsh WSBK racer
+LOWES,Twin brothers Alex and Sam
+BAZ,Loris the tall Frenchman
+LORIS,Baz of WSBK
+RABAT,Tito the 2014 Moto2 champion
+TITO,Rabat's first name
+PEDRO,Acosta the young Spanish star
+OGURA,Ai who won Moto2 in 2024
+CANET,Aron of the Moto2 grid
+ARON,Canet's first name
+TONY,Arbolino of Moto2
+MASIA,Jaume the 2023 Moto3 champion
+JAUME,Masia's first name
+MIGNO,Andrea of Moto3
+OETTL,Philipp the German racer
+LUCA,Marini the Italian
+MARCO,Bezzecchi's first name
+BEZ,Bezzecchi in short
+TAKA,Nakagami to the paddock
+REMY,Gardner the 2021 Moto2 champion
+RAUL,Fernandez the Spaniard
+IKER,Lecuona the Spanish racer
+ZONTA,Van den Goorbergh of the Dutch
+DIXON,Jake the British Moto2 winner
+JAKE,Dixon's first name
+RORY,Skinner the Scottish racer
+
+# --- British short circuit + road racers ---
+LEON,Haslam the 2018 BSB champion
+IRWIN,Glenn of North West 200 fame
+GLENN,Irwin's first name
+JOSH,Brookes the twice BSB champion
+TOMMY,Bridewell the 2023 BSB champion
+RAY,Bradley the 2022 BSB champion
+IDDON,Christian of the BSB grid
+RYDE,Kyle the 2024 BSB champion
+KYLE,Ryde's first name
+JASON,O'Halloran of BSB
+DEAN,Harrison the TT winner
+PETER,Hickman the TT lap record holder
+TODD,Davey of recent TT wins
+DAVEY,Todd's first name
+GUY,Martin the TT racer and presenter
+JOHN,McGuinness with 23 TT wins
+IAN,Hutchinson the TT record breaker
+SAM,Lowes the 2013 world champion
+TOM,Sykes of WSBK
+
+# --- marques (3-5 letters) ---
+KTM,Austrian bike maker in orange
+HONDA,Japanese maker of the Fireblade
+BMW,Bavarian maker of the S1000RR
+BSA,Old Birmingham marque
+BETA,Italian trials bike maker
+VESPA,Italian scooter icon
+FIM,Motorcycling's world governing body
+WSBK,World Superbike in short
+SBK,Superbike class in short
+BSB,British Superbike series abbreviation
