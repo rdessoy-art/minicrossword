@@ -166,11 +166,90 @@ FILL_BANK.update({
     "GAMMA": "Third Greek letter", "GAP": "Space between",
     "MEDAL": "Winner's disc", "NAIL": "Hammer's target",
     "OLD": "Not young", "SALAD": "Bowl of greens",
+
+    "ACIDS": "Vinegar and lemon juice", "ACTOR": "Stage performer",
+    "ACUTE": "Angle under 90 degrees", "AFTER": "Following",
+    "AGO": "In the past", "ALONG": "Beside the length of",
+    "ALSO": "In addition", "APART": "Separated", "ARBOR": "Shady garden shelter",
+    "ARCH": "Curved doorway top", "AREAS": "Regions", "ASIDE": "To one side",
+    "ASK": "Put a question", "AUTOS": "Cars informally", "BASIN": "Washing bowl",
+    "BASIS": "Foundation", "BEGUN": "Started", "BITE": "Nip with the teeth",
+    "BLESS": "Say a benediction over", "BONE": "Skeleton part",
+    "BORED": "Fed up", "BREED": "Raise animals", "CAMPS": "Tented sites",
+    "CANDY": "American sweets", "CHI": "Greek letter after phi",
+    "CHILE": "Long South American country", "CIVIL": "Polite",
+    "CODE": "Secret writing", "CODES": "Cipher systems", "COINS": "Loose change",
+    "CUT": "Slice through", "DADDY": "Informal father", "DATES": "Calendar days",
+    "DENSE": "Tightly packed", "DEVIL": "Mischief maker", "DIVE": "Plunge headfirst",
+    "DOE": "Female deer", "DOSE": "Amount of medicine", "DOT": "Small round mark",
+    "ECHO": "Sound bouncing back", "EPIC": "Grand in scale", "FALSE": "Not true",
+    "FED": "Gave food to", "FOCAL": "Central to the point", "GAVE": "Handed over",
+    "GNOME": "Garden statue figure", "GOES": "Departs", "GURU": "Revered teacher",
+    "HEADS": "A coin's other side", "HEARD": "Listened to", "HERE": "In this place",
+    "HOSTS": "Party givers", "KINDA": "Sort of informally", "KITTY": "Pooled money",
+    "LAMPS": "Table lights", "LATE": "Behind time", "LAY": "Put down",
+    "LEADS": "Goes first", "LEAST": "Smallest amount", "LED": "Guided",
+    "LEE": "The sheltered side", "LET": "Allow", "LIT": "Set alight",
+    "LOSE": "Fail to keep", "MARSH": "Boggy ground", "MEALS": "Breakfast and dinner",
+    "MEET": "Come together", "MEN": "Adult males", "MET": "Encountered",
+    "MORE": "A greater amount", "NAME": "What you are called", "ONTO": "Aware of",
+    "PAL": "Good friend", "PASTE": "Sticky stuff", "PLANS": "Schemes",
+    "PLOTS": "Garden patches", "PRIME": "Of the first quality", "READS": "Peruses",
+    "RESET": "Set once again", "ROADS": "Highways", "ROMAN": "Of ancient Rome",
+    "ROUGE": "Red face powder", "ROUGH": "Not smooth", "RULES": "Regulations",
+    "SAD": "Feeling low", "SEEMS": "Appears to be", "SELLS": "Trades for money",
+    "SET": "Put in place", "SHALL": "Will", "SHE": "That woman",
+    "SHED": "Garden store", "SLOTS": "Narrow openings", "SOFT": "Not hard",
+    "SOLO": "On your own", "SUE": "Take to court", "SURE": "Certain",
+    "TAB": "Bar bill", "TEAMS": "Squads", "TESTS": "Exams",
+    "THETA": "Greek letter after eta", "TILES": "Roof coverings",
+    "TRASH": "American rubbish", "TREK": "Long hard journey", "TUBES": "Cylinders",
+    "USER": "One who uses", "USERS": "Those who use", "WED": "Marry",
+    "WHEN": "At what time", "YEAST": "What makes bread rise",
+
+    "BLOOM": "Come into flower",
+    "BRAVE": "Full of courage",
+    "BROAD": "Wide",
+    "DRY": "Not wet",
+    "EDGE": "Outer border",
+    "GEAR": "Cog or equipment",
+    "GREAT": "Really good",
+    "GREEN": "Grass shade",
+    "GUEST": "Visitor",
+    "LARGE": "Big",
+    "LEMON": "Sour citrus",
+    "OPERA": "Sung drama",
+    "OUTER": "On the outside",
+    "PLACE": "Location",
+    "PLATE": "Dinner ware",
+    "RIDE": "Journey on a bike or bus",
+    "ROBIN": "Red-breasted bird",
+    "ROBOT": "Mechanical worker",
+    "SHOE": "Foot cover",
+    "SPACE": "The final frontier",
+    "SPICE": "Curry flavour",
+    "STONE": "Rock piece",
+    "TASTE": "Tongue's sense",
+    "TEA": "Afternoon brew",
+    "TENT": "Camping shelter",
+    "THREE": "Number after two",
+    "TOE": "Foot digit",
+    "WORLD": "The globe",
 })
 
 
 def load_dictwords():
-    """A basic real-word check so fallback fill never invents non-words."""
+    """A basic real-word check for UNCURATED fill lists.
+
+    Off by default: /usr/share/dict/words on macOS is web2, Webster's 1934,
+    which lists no inflected forms. Filtering the curated common_fill.txt
+    through it silently discarded 373 perfectly good answers (ACTS, ADDS,
+    AIMED, ASKED, ...) — 270 of them 5-letter, the scarcest slot on a 5x5.
+    That shrank the solver's reachable grids badly: distinct grids per
+    theme went 9 -> 16 (general) and 12 -> 35 (motorcycling) once the
+    curated list was trusted. Enable with --dict-check for a fill list you
+    have not vetted yourself.
+    """
     path = Path("/usr/share/dict/words")
     if not path.exists():
         return None
@@ -219,12 +298,20 @@ def load_fill_words(fill_path):
     return set(FILL_BANK.keys())
 
 
-def build_pools(theme_words, fill_words, dictwords):
-    """word -> clue for both theme and fill, split by length, theme-first order."""
+def build_pools(theme_words, fill_words, dictwords, theme_first=True):
+    """word -> clue for both theme and fill, split by length, theme-first order.
+
+    theme_first=False keeps every theme word (and its clue) in the pool but
+    drops its priority, so it competes with ordinary fill. Trying a large
+    word list first funnels the search down the same branches: the untethered
+    "general" set went from 16 distinct reachable grids to 73 once its 623
+    words stopped being tried ahead of everything else. Prioritise for a real
+    theme; flatten for a set that has no theme to express.
+    """
     pools = {3: [], 4: [], 5: []}
     for w, c in theme_words.items():
         if len(w) in pools:
-            pools[len(w)].append((w, c, True))  # True = theme word, tried first
+            pools[len(w)].append((w, c, theme_first))
     # sorted(): fill_words is a set, and Python randomises string hashing per
     # process, so unsorted iteration made pool order — and therefore --seed —
     # unreproducible between runs.
@@ -351,6 +438,16 @@ def main():
                      help="large structural fill list, word-per-line (default bundled file)")
     ap.add_argument("--out", default=None, help="defaults to puzzles/<theme>.json")
     ap.add_argument("--count", type=int, default=1)
+    ap.add_argument("--no-theme-first", action="store_true",
+                    help="don't try theme words ahead of ordinary fill. For a "
+                         "set with no real theme (the 'general' bank), the word "
+                         "list is then just a clue source and grid variety rises "
+                         "sharply. Pair with --min-theme 0.")
+    ap.add_argument("--dict-check", action="store_true",
+                    help="validate fill words against /usr/share/dict/words. "
+                         "Off by default: that dictionary has no inflected "
+                         "forms, so it rejects curated answers like ACTS and "
+                         "ASKED. Use it only for a fill list you have not vetted.")
     ap.add_argument("--max-repeat", type=int, default=1,
                     help="how many answers a new puzzle may share with all "
                          "previous ones (default 1). This — not word-list size "
@@ -372,9 +469,10 @@ def main():
         sys.exit(1)
 
     theme_words = load_theme_words(wordlist_path)
-    dictwords = load_dictwords()
+    dictwords = load_dictwords() if args.dict_check else None
     fill_words = load_fill_words(args.fill_words)
-    pools = build_pools(theme_words, fill_words, dictwords)
+    pools = build_pools(theme_words, fill_words, dictwords,
+                        theme_first=not args.no_theme_first)
 
     existing_bank, used_words = load_existing_bank(out_path)
 

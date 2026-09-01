@@ -10,8 +10,8 @@ the archive; future dates are never reachable.
 index.html                 # the engine — grid, input, timer, checking. Never
                             # needs to change when you add puzzles or themes.
 puzzles/
-  general.json              # default theme, 11 puzzles
-  motorcycling.json          # example theme, 11 puzzles
+  general.json              # default theme, 30 puzzles
+  motorcycling.json          # example theme, 30 puzzles
 tools/
   generate_puzzle.py         # dictionary-backed puzzle generator/solver
   wordlists/
@@ -43,9 +43,23 @@ Two flags shape the result:
   answers, so no puzzle in a themed set is themeless. On a 5×5, 2 is
   reachable but yields fewer puzzles and 3 is not achievable.
 - `--max-repeat N` (default 1) is how many answers a new puzzle may share
-  with all earlier ones. **This, not word-list size, is what caps a set** —
-  as a bank grows, every new grid inevitably shares more common fill with
-  what came before. If generation stalls, raise this before adding words.
+  with all earlier ones. As a bank grows, every new grid inevitably shares
+  more common fill with what came before, so raise this if generation
+  stalls.
+- `--no-theme-first` stops theme words being tried ahead of ordinary fill.
+  Trying a large list first funnels the search down the same branches: the
+  general bank had only 16 distinct reachable grids with its 623 words
+  prioritised, and 73 without. Use it for a set with no theme to express
+  (pair with `--min-theme 0`); leave it off for a real theme.
+- `--dict-check` validates fill words against `/usr/share/dict/words`. Off
+  by default — on macOS that is Webster's 1934, which lists no inflected
+  forms and so rejects 373 curated answers (`ACTS`, `ADDS`, `ASKED`). Use
+  it only for a fill list you have not vetted yourself.
+
+**If generation stalls, the usual cause is grid variety, not vocabulary.**
+Check how many *distinct* grids the solver can actually reach before adding
+more words — a bank tops out when the search keeps rediscovering the same
+handful of solutions.
 
 ## Adding a new theme
 

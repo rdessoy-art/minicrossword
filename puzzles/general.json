@@ -504,5 +504,879 @@
         "Way fashion is heading"
       ]
     }
+  },
+  {
+    "across": {
+      "1": [
+        "SAD",
+        "Feeling low"
+      ],
+      "7": [
+        "ACTOR",
+        "Stage performer"
+      ],
+      "8": [
+        "THEME",
+        "Recurring subject"
+      ],
+      "5": [
+        "TRASH",
+        "American rubbish"
+      ],
+      "9": [
+        "SEE",
+        "Perceive with the eyes"
+      ]
+    },
+    "down": {
+      "2": [
+        "ARCH",
+        "Curved doorway top"
+      ],
+      "3": [
+        "DATES",
+        "Calendar days"
+      ],
+      "1": [
+        "STATE",
+        "Texas for one"
+      ],
+      "6": [
+        "SOME",
+        "A few, informally"
+      ],
+      "4": [
+        "THREE",
+        "Number after two"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "GET",
+        "Obtain"
+      ],
+      "7": [
+        "ARMOR",
+        "Knight's protective suit"
+      ],
+      "5": [
+        "RAISE",
+        "Lift up"
+      ],
+      "8": [
+        "CLEAR",
+        "Easy to see through"
+      ],
+      "9": [
+        "SPY",
+        "Secret agent"
+      ]
+    },
+    "down": {
+      "2": [
+        "EARL",
+        "Rank below a marquess"
+      ],
+      "1": [
+        "GRACE",
+        "Elegance of movement"
+      ],
+      "3": [
+        "TIMES",
+        "Multiplication word"
+      ],
+      "6": [
+        "SOAP",
+        "Bar by the bath"
+      ],
+      "4": [
+        "BERRY",
+        "Small soft fruit"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "SET",
+        "Put in place"
+      ],
+      "8": [
+        "CLEAR",
+        "Easy to see through"
+      ],
+      "7": [
+        "ARBOR",
+        "Shady garden shelter"
+      ],
+      "5": [
+        "PAUSE",
+        "Brief stop"
+      ],
+      "9": [
+        "SPY",
+        "Secret agent"
+      ]
+    },
+    "down": {
+      "2": [
+        "EARL",
+        "Rank below a marquess"
+      ],
+      "1": [
+        "SPACE",
+        "The final frontier"
+      ],
+      "3": [
+        "TUBES",
+        "Cylinders"
+      ],
+      "6": [
+        "SOAP",
+        "Bar by the bath"
+      ],
+      "4": [
+        "MERRY",
+        "Cheerful"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "ERA",
+        "Historical period"
+      ],
+      "7": [
+        "ELDER",
+        "Older one"
+      ],
+      "5": [
+        "LODGE",
+        "Ski accommodation"
+      ],
+      "8": [
+        "CLEAR",
+        "Easy to see through"
+      ],
+      "9": [
+        "DRY",
+        "Not wet"
+      ]
+    },
+    "down": {
+      "1": [
+        "ELECT",
+        "Vote into office"
+      ],
+      "3": [
+        "ADDED",
+        "Summed up"
+      ],
+      "2": [
+        "ROLL",
+        "Bread bun"
+      ],
+      "6": [
+        "GEAR",
+        "Cog or equipment"
+      ],
+      "4": [
+        "MERRY",
+        "Cheerful"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "LAY",
+        "Put down"
+      ],
+      "9": [
+        "TOY",
+        "Child's plaything"
+      ],
+      "7": [
+        "MEALS",
+        "Breakfast and dinner"
+      ],
+      "5": [
+        "AREAS",
+        "Regions"
+      ],
+      "8": [
+        "PASTA",
+        "Italian staple"
+      ]
+    },
+    "down": {
+      "3": [
+        "YEAST",
+        "What makes bread rise"
+      ],
+      "6": [
+        "ALTO",
+        "Voice type between soprano and tenor"
+      ],
+      "4": [
+        "ESSAY",
+        "Written composition"
+      ],
+      "1": [
+        "LAMPS",
+        "Table lights"
+      ],
+      "2": [
+        "AREA",
+        "Measured space"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "ITS",
+        "Belonging to it"
+      ],
+      "8": [
+        "USAGE",
+        "Manner of use"
+      ],
+      "5": [
+        "SITES",
+        "Web pages"
+      ],
+      "7": [
+        "SEEDS",
+        "What plants grow from"
+      ],
+      "9": [
+        "MET",
+        "Encountered"
+      ]
+    },
+    "down": {
+      "1": [
+        "ISSUE",
+        "Magazine number"
+      ],
+      "2": [
+        "TIES",
+        "Neckwear, plural"
+      ],
+      "4": [
+        "ASSET",
+        "Valuable resource"
+      ],
+      "6": [
+        "EDGE",
+        "Outer border"
+      ],
+      "3": [
+        "STEAM",
+        "Kettle's output"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "THE",
+        "Commonest word in English"
+      ],
+      "9": [
+        "SEE",
+        "Perceive with the eyes"
+      ],
+      "7": [
+        "ORGAN",
+        "Church instrument"
+      ],
+      "5": [
+        "HEDGE",
+        "Garden boundary bush"
+      ],
+      "8": [
+        "SEEMS",
+        "Appears to be"
+      ]
+    },
+    "down": {
+      "3": [
+        "EDGES",
+        "Outer borders"
+      ],
+      "1": [
+        "THOSE",
+        "Not these"
+      ],
+      "2": [
+        "HERE",
+        "In this place"
+      ],
+      "6": [
+        "GAME",
+        "Match or contest"
+      ],
+      "4": [
+        "DENSE",
+        "Tightly packed"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "CHI",
+        "Greek letter after phi"
+      ],
+      "9": [
+        "LET",
+        "Allow"
+      ],
+      "5": [
+        "HEDGE",
+        "Garden boundary bush"
+      ],
+      "8": [
+        "LEAVE",
+        "Depart"
+      ],
+      "7": [
+        "AREAS",
+        "Regions"
+      ]
+    },
+    "down": {
+      "3": [
+        "IDEAL",
+        "Just perfect"
+      ],
+      "6": [
+        "GAVE",
+        "Handed over"
+      ],
+      "2": [
+        "HERE",
+        "In this place"
+      ],
+      "4": [
+        "RESET",
+        "Set once again"
+      ],
+      "1": [
+        "CHALK",
+        "Blackboard stick"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "CUT",
+        "Slice through"
+      ],
+      "5": [
+        "ASIDE",
+        "To one side"
+      ],
+      "7": [
+        "MELON",
+        "Summer fruit"
+      ],
+      "8": [
+        "PRESS",
+        "Push down"
+      ],
+      "9": [
+        "SEE",
+        "Perceive with the eyes"
+      ]
+    },
+    "down": {
+      "2": [
+        "USER",
+        "One who uses"
+      ],
+      "3": [
+        "TILES",
+        "Roof coverings"
+      ],
+      "1": [
+        "CAMPS",
+        "Tented sites"
+      ],
+      "6": [
+        "DOSE",
+        "Amount of medicine"
+      ],
+      "4": [
+        "DENSE",
+        "Tightly packed"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "SHE",
+        "That woman"
+      ],
+      "9": [
+        "WED",
+        "Marry"
+      ],
+      "7": [
+        "ARBOR",
+        "Shady garden shelter"
+      ],
+      "5": [
+        "HELLO",
+        "Friendly greeting"
+      ],
+      "8": [
+        "LOOSE",
+        "Not tight"
+      ]
+    },
+    "down": {
+      "3": [
+        "ELBOW",
+        "Arm joint"
+      ],
+      "4": [
+        "BORED",
+        "Fed up"
+      ],
+      "2": [
+        "HERO",
+        "Brave figure"
+      ],
+      "1": [
+        "SHALL",
+        "Will"
+      ],
+      "6": [
+        "LOSE",
+        "Fail to keep"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "LED",
+        "Guided"
+      ],
+      "8": [
+        "ACIDS",
+        "Vinegar and lemon juice"
+      ],
+      "5": [
+        "OPERA",
+        "Sung drama"
+      ],
+      "7": [
+        "CIVIL",
+        "Polite"
+      ],
+      "9": [
+        "LEE",
+        "The sheltered side"
+      ]
+    },
+    "down": {
+      "2": [
+        "EPIC",
+        "Grand in scale"
+      ],
+      "1": [
+        "LOCAL",
+        "From round here"
+      ],
+      "3": [
+        "DEVIL",
+        "Mischief maker"
+      ],
+      "6": [
+        "RIDE",
+        "Journey on a bike or bus"
+      ],
+      "4": [
+        "FALSE",
+        "Not true"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "ARM",
+        "Shoulder to hand"
+      ],
+      "7": [
+        "ACTOR",
+        "Stage performer"
+      ],
+      "5": [
+        "PIECE",
+        "Single part"
+      ],
+      "8": [
+        "READS",
+        "Peruses"
+      ],
+      "9": [
+        "LEE",
+        "The sheltered side"
+      ]
+    },
+    "down": {
+      "2": [
+        "RICE",
+        "Grain side dish"
+      ],
+      "1": [
+        "APART",
+        "Separated"
+      ],
+      "3": [
+        "METAL",
+        "Iron or tin"
+      ],
+      "4": [
+        "VERSE",
+        "Poem section"
+      ],
+      "6": [
+        "CODE",
+        "Secret writing"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "AGE",
+        "Years behind you"
+      ],
+      "9": [
+        "SUE",
+        "Take to court"
+      ],
+      "7": [
+        "BEGUN",
+        "Started"
+      ],
+      "5": [
+        "LODGE",
+        "Ski accommodation"
+      ],
+      "8": [
+        "USERS",
+        "Those who use"
+      ]
+    },
+    "down": {
+      "3": [
+        "EDGES",
+        "Outer borders"
+      ],
+      "6": [
+        "GURU",
+        "Revered teacher"
+      ],
+      "1": [
+        "ALBUM",
+        "LP record"
+      ],
+      "2": [
+        "GOES",
+        "Departs"
+      ],
+      "4": [
+        "SENSE",
+        "Sight or smell"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "TEE",
+        "Golf ball support"
+      ],
+      "7": [
+        "ISSUE",
+        "Magazine number"
+      ],
+      "9": [
+        "YES",
+        "The affirmative"
+      ],
+      "8": [
+        "STAND",
+        "Get to your feet"
+      ],
+      "5": [
+        "WASTE",
+        "Rubbish"
+      ]
+    },
+    "down": {
+      "2": [
+        "EAST",
+        "Where the sun comes up"
+      ],
+      "3": [
+        "ESSAY",
+        "Written composition"
+      ],
+      "6": [
+        "TUNE",
+        "Catchy melody"
+      ],
+      "1": [
+        "TWIST",
+        "Turn sharply"
+      ],
+      "4": [
+        "SEEDS",
+        "What plants grow from"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "TAB",
+        "Bar bill"
+      ],
+      "7": [
+        "SCENE",
+        "Part of an act"
+      ],
+      "5": [
+        "ERROR",
+        "Slip-up"
+      ],
+      "8": [
+        "THETA",
+        "Greek letter after eta"
+      ],
+      "9": [
+        "DOT",
+        "Small round mark"
+      ]
+    },
+    "down": {
+      "2": [
+        "ARCH",
+        "Curved doorway top"
+      ],
+      "1": [
+        "TESTS",
+        "Exams"
+      ],
+      "3": [
+        "BREED",
+        "Raise animals"
+      ],
+      "6": [
+        "ONTO",
+        "Aware of"
+      ],
+      "4": [
+        "TREAT",
+        "Special something"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "AMP",
+        "Guitar amplifier, briefly"
+      ],
+      "8": [
+        "OTTER",
+        "River swimmer"
+      ],
+      "5": [
+        "LEASE",
+        "Rental contract"
+      ],
+      "7": [
+        "LASER",
+        "Focused light beam"
+      ],
+      "9": [
+        "ANY",
+        "Some at all"
+      ]
+    },
+    "down": {
+      "2": [
+        "MEAT",
+        "Butcher's product"
+      ],
+      "1": [
+        "ALLOY",
+        "Metal blend used for wheels"
+      ],
+      "3": [
+        "PASTA",
+        "Italian staple"
+      ],
+      "4": [
+        "MERRY",
+        "Cheerful"
+      ],
+      "6": [
+        "SEEN",
+        "Observed"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "OWL",
+        "Night bird"
+      ],
+      "8": [
+        "ENDED",
+        "Brought to a close"
+      ],
+      "5": [
+        "THETA",
+        "Greek letter after eta"
+      ],
+      "7": [
+        "HEARD",
+        "Listened to"
+      ],
+      "9": [
+        "SKY",
+        "Overhead blue"
+      ]
+    },
+    "down": {
+      "1": [
+        "OTHER",
+        "Not this one, the ___ one"
+      ],
+      "2": [
+        "WHEN",
+        "At what time"
+      ],
+      "3": [
+        "LEADS",
+        "Goes first"
+      ],
+      "4": [
+        "DADDY",
+        "Informal father"
+      ],
+      "6": [
+        "TREK",
+        "Long hard journey"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "ASH",
+        "What is left after a fire"
+      ],
+      "9": [
+        "SKY",
+        "Overhead blue"
+      ],
+      "8": [
+        "ADDED",
+        "Summed up"
+      ],
+      "5": [
+        "THETA",
+        "Greek letter after eta"
+      ],
+      "7": [
+        "LEARN",
+        "Take in knowledge"
+      ]
+    },
+    "down": {
+      "3": [
+        "HEADS",
+        "A coin's other side"
+      ],
+      "6": [
+        "TREK",
+        "Long hard journey"
+      ],
+      "1": [
+        "ATLAS",
+        "Book of maps"
+      ],
+      "2": [
+        "SHED",
+        "Garden store"
+      ],
+      "4": [
+        "CANDY",
+        "American sweets"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "AGO",
+        "In the past"
+      ],
+      "9": [
+        "SET",
+        "Put in place"
+      ],
+      "7": [
+        "BASIS",
+        "Foundation"
+      ],
+      "8": [
+        "OLIVE",
+        "Martini garnish"
+      ],
+      "5": [
+        "ROADS",
+        "Highways"
+      ]
+    },
+    "down": {
+      "3": [
+        "OASIS",
+        "Desert watering hole"
+      ],
+      "1": [
+        "ARBOR",
+        "Shady garden shelter"
+      ],
+      "2": [
+        "GOAL",
+        "Aim scored"
+      ],
+      "4": [
+        "ASSET",
+        "Valuable resource"
+      ],
+      "6": [
+        "DIVE",
+        "Plunge headfirst"
+      ]
+    }
   }
 ]
