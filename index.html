@@ -105,6 +105,10 @@
     color: var(--ink);
     transition: background 0.15s, border-color 0.15s;
   }
+  /* [hidden] is display:none in the UA sheet, but .iconbtn's display:flex
+     wins on specificity — without this the "back to today" button stays
+     visible on today's puzzle, which is exactly when it does nothing. */
+  .iconbtn[hidden]{ display:none; }
   .iconbtn:hover{ background: var(--paper); border-color: var(--brass); }
   .iconbtn svg{width:16px;height:16px;}
 
@@ -340,6 +344,37 @@
     font-size:11px;
     color: var(--ink-soft);
     opacity:0.7;
+  }
+
+  /* ---------- Phones ----------
+     The only breakpoint here used to be 380px, but current iPhones report
+     390-430px wide, so it never fired on any of them and the toolbar's five
+     controls overflowed the card. 480px covers the whole phone range. */
+  @media (max-width: 480px){
+    body{ padding: 20px 12px 44px; }
+    h1{ font-size:32px; }
+    header{ margin-bottom:14px; }
+
+    /* Timer keeps the first row; the controls get their own full-width row
+       underneath rather than being squeezed off the edge. */
+    .statusbar{
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+    }
+    .statusbar .actions{ flex: 1 1 100%; gap:8px; }
+
+    /* min-width:0 lets these shrink inside the flex row instead of forcing
+       an overflow at the native control's intrinsic width. */
+    #datePicker, #themeSelect{ flex:1 1 auto; min-width:0; }
+    .iconbtn{ flex:0 0 auto; }
+
+    /* Four actions don't fit across a phone — wrap them two-up. */
+    .controls{ flex-wrap: wrap; gap:8px; margin-bottom:18px; }
+    .controls button{ flex:1 1 calc(50% - 4px); }
+
+    .clue-columns{ gap:12px; }
   }
 
   @media (max-width: 380px){
