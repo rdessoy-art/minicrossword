@@ -1,7 +1,8 @@
-# Mini Crossword
+# Vocab Mini
 
 A daily 5×5 crossword, in the spirit of the NYT Mini — English, themeable,
-and hosted for free on GitHub Pages.
+and hosted for free on GitHub Pages. Players can pick any past date from
+the archive; future dates are never reachable.
 
 ## Structure
 
@@ -9,13 +10,14 @@ and hosted for free on GitHub Pages.
 index.html                 # the engine — grid, input, timer, checking. Never
                             # needs to change when you add puzzles or themes.
 puzzles/
-  general.json              # default theme, 8 puzzles
-  motorcycling.json          # example theme (sample included)
+  general.json              # default theme, 11 puzzles
+  motorcycling.json          # example theme, 11 puzzles
 tools/
   generate_puzzle.py         # dictionary-backed puzzle generator/solver
   wordlists/
     common_fill.txt          # ~2,100 clean, common 3-5 letter words used
                               # to fill grid slots your theme list can't
+    general.csv               # everyday English words for the default theme
     motorcycling.csv          # example theme word list — WORD,clue pairs
 .github/workflows/deploy.yml # auto-publishes to Pages on every push to main
 ```
@@ -35,6 +37,16 @@ python tools/generate_puzzle.py --theme general --count 5
 Generates 5 new solver-verified puzzles and appends them to
 `puzzles/general.json`, skipping repeats where possible.
 
+Two flags shape the result:
+
+- `--min-theme N` (default 1) rejects grids with fewer than N theme
+  answers, so no puzzle in a themed set is themeless. On a 5×5, 2 is
+  reachable but yields fewer puzzles and 3 is not achievable.
+- `--max-repeat N` (default 1) is how many answers a new puzzle may share
+  with all earlier ones. **This, not word-list size, is what caps a set** —
+  as a bank grows, every new grid inevitably shares more common fill with
+  what came before. If generation stalls, raise this before adding words.
+
 ## Adding a new theme
 
 1. Create `tools/wordlists/<theme>.csv` — one `WORD,clue` pair per line,
@@ -43,8 +55,12 @@ Generates 5 new solver-verified puzzles and appends them to
    APEX,Fastest point through a corner
    DUCATI,Bologna-based bike maker
    ```
-   30–50 entries is a good starting size. Longer theme words (6+) are
-   read but can't be placed in this 5×5 grid shape — keep to 3–5 letters.
+   30–50 entries is a workable minimum, but more is materially better:
+   each puzzle needs six 5-letter, two 4-letter and two 3-letter answers,
+   so 5-letter words are the scarcest resource. Longer theme words (6+)
+   are read but silently dropped — they can't be placed in a 5×5, so
+   `DUCATI` and `SILVERSTONE` are wasted entries. Clues must not contain
+   commas; the loader reads the second field only and would truncate.
 
 2. Generate:
    ```bash
