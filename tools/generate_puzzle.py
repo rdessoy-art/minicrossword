@@ -110,6 +110,60 @@ FILL_BANK = {
     "LIVE": "Broadcast in real time", "REAR": "Back part", "NET": "Fishing gear, or a total after deductions",
 }
 
+# Clues for the common fill words the 5x5 grid keeps selecting. Without
+# these the generator emits "TODO: write a clue for X" placeholders, which
+# are visible to players in the live game.
+FILL_BANK.update({
+    "ACT": "Part of a play", "ALIKE": "Similar", "ALIVE": "Still living",
+    "AMBER": "Traffic light between red and green", "ARISE": "Get up",
+    "ARMOR": "Knight's protective suit", "ATE": "Had dinner",
+    "AWARE": "Conscious of it", "AWAY": "Not at home", "BAT": "Cricket club",
+    "BELLY": "The stomach", "BERRY": "Small soft fruit",
+    "BINGO": "Hall game with numbered balls", "BLANK": "Empty space",
+    "BRIEF": "Not lasting long", "CALL": "Ring up", "CARGO": "A ship's freight",
+    "CLEAR": "Easy to see through", "COLOR": "Red or blue for example",
+    "CREEK": "Small stream", "CURE": "Remedy for an ailment",
+    "DEAR": "Costly or much loved", "EACH": "Every one",
+    "EARL": "Rank below a marquess", "EARLY": "Ahead of time",
+    "EAST": "Where the sun comes up", "EDGES": "Outer borders",
+    "END": "The finish", "ENDED": "Brought to a close",
+    "ESSAY": "Written composition", "GAME": "Match or contest",
+    "GET": "Obtain", "GRACE": "Elegance of movement", "HOLD": "Keep a grip on",
+    "IDEAL": "Just perfect", "INNER": "Further in", "INTO": "Heading inside",
+    "KEY": "It opens a lock", "LASER": "Focused beam of light",
+    "LEAVE": "Depart", "LIVES": "Exists", "LYING": "Stretched out flat",
+    "MAKER": "Manufacturer", "MARIA": "West Side Story song",
+    "MERGE": "Join together", "MONEY": "Cash", "OCEAN": "Atlantic or Pacific",
+    "OVEN": "Where you bake", "OVER": "Six balls in cricket",
+    "POLO": "Sport played on horseback", "RAISE": "Lift up",
+    "REACH": "Stretch out to touch", "REST": "Take a break",
+    "SALLY": "A girl's name", "SAND": "Beach material",
+    "SEC": "Moment in short", "SEEN": "Observed", "SHEET": "Bed linen",
+    "SOAP": "Bar by the bath", "SPY": "Secret agent", "STORE": "Shop",
+    "TEE": "Golf ball support", "THE": "Commonest word in English",
+    "THEIR": "Belonging to them", "THEME": "Recurring subject",
+    "TIDE": "The sea's rise and fall", "TIMES": "Multiplication word",
+    "TOKEN": "Symbolic gesture", "TRAIN": "Transport on rails",
+    "TREND": "Way fashion is heading", "TUNE": "Catchy melody",
+    "TWIST": "Turn sharply", "WASTE": "Rubbish", "YES": "The affirmative",
+
+    "ALLOY": "Metal blend used for wheels", "ANY": "Some at all",
+    "ASH": "What is left after a fire", "ATLAS": "Book of maps",
+    "BAG": "Tank ___ for carrying kit", "GRADE": "Mark for schoolwork",
+    "LOOSE": "Slack like a chain needing adjustment", "PATH": "Way through",
+    "SOUL": "Motown music style", "STATE": "Texas for one",
+    "TALES": "Stories", "THOSE": "Not these", "TUNER": "One who sets up an engine",
+
+    "ADDED": "Summed up", "ALBUM": "LP record", "BRASS": "Trumpet section metal",
+    "CORN": "Crop on the cob", "ELECT": "Vote into office",
+    "ISLE": "___ of Man home of the TT", "LODGE": "Ski resort accommodation",
+    "MERRY": "Cheerful", "ROLL": "Bread bun", "TRACT": "Stretch of land",
+    "UNCLE": "Your aunt's husband",
+
+    "TAKEN": "Already occupied", "NON": "___-stop meaning without a break",
+    "MASON": "Worker in stone",
+})
+
 
 def load_dictwords():
     """A basic real-word check so fallback fill never invents non-words."""
@@ -167,7 +221,10 @@ def build_pools(theme_words, fill_words, dictwords):
     for w, c in theme_words.items():
         if len(w) in pools:
             pools[len(w)].append((w, c, True))  # True = theme word, tried first
-    for w in fill_words:
+    # sorted(): fill_words is a set, and Python randomises string hashing per
+    # process, so unsorted iteration made pool order — and therefore --seed —
+    # unreproducible between runs.
+    for w in sorted(fill_words):
         if len(w) in pools and w not in theme_words and w not in BLOCKLIST:
             if dictwords is None or w in dictwords:
                 clue = FILL_BANK.get(w, "")  # may be filled in later, else TODO
@@ -187,6 +244,7 @@ def solve_one(pools, avoid_words, seed):
 
     grid = {}
     sol = {}  # slot_key -> (word, clue, is_theme)
+    used_now = set()  # answers currently placed, kept in step with sol
 
     def key(r, c):
         return (r, c)
@@ -197,12 +255,29 @@ def solve_one(pools, avoid_words, seed):
     for cl in TEMPLATE["down"]:
         slots[("D", cl["num"])] = [(cl["row"] + i, cl["col"]) for i in range(cl["len"])]
 
+    match_cache = {}
+
+    def matches(length, pattern):
+        """Pool entries of `length` matching `pattern`, memoised.
+
+        Backtracking revisits the same partial patterns over and over, and
+        rescanning an 800-entry pool with a freshly compiled regex each time
+        was the solver's hot path. Cache keeps ordering (theme words first).
+        """
+        hit = match_cache.get((length, pattern))
+        if hit is None:
+            if "." in pattern:
+                rx = re.compile("^" + pattern + "$")
+                hit = [e for e in ordered[length] if rx.match(e[0])]
+            else:
+                hit = [e for e in ordered[length] if e[0] == pattern]
+            match_cache[(length, pattern)] = hit
+        return hit
+
     def candidates(slot_id):
         cells = slots[slot_id]
         pattern = "".join(grid.get(c, ".") for c in cells)
-        rx = re.compile("^" + pattern + "$")
-        used_here = {w for (w, _c, _t) in sol.values()}
-        return [e for e in ordered[len(cells)] if rx.match(e[0]) and e[0] not in used_here]
+        return [e for e in matches(len(cells), pattern) if e[0] not in used_now]
 
     def place(slot_id, entry):
         added = []
@@ -223,17 +298,27 @@ def solve_one(pools, avoid_words, seed):
             raise TimeoutError
         if not remaining:
             return True
-        best = min(remaining, key=lambda s: len(candidates(s)))
-        cands = candidates(best)
+        # Most-constrained slot first. Score each remaining slot once and
+        # keep the winner's list rather than recomputing it after the min().
+        best = None
+        cands = None
+        for s in remaining:
+            c = candidates(s)
+            if cands is None or len(c) < len(cands):
+                best, cands = s, c
+                if not c:
+                    break  # dead end already — no point scoring the rest
         if not cands:
             return False
         rest = [s for s in remaining if s != best]
         for entry in cands:
             added = place(best, entry)
             sol[best] = entry
+            used_now.add(entry[0])
             if backtrack(rest):
                 return True
             del sol[best]
+            used_now.discard(entry[0])
             unplace(added)
         return False
 
@@ -262,6 +347,14 @@ def main():
                      help="large structural fill list, word-per-line (default bundled file)")
     ap.add_argument("--out", default=None, help="defaults to puzzles/<theme>.json")
     ap.add_argument("--count", type=int, default=1)
+    ap.add_argument("--max-repeat", type=int, default=1,
+                    help="how many answers a new puzzle may share with all "
+                         "previous ones (default 1). This — not word-list size "
+                         "— is what caps a set; raise it to keep generating.")
+    ap.add_argument("--min-theme", type=int, default=1,
+                    help="reject grids with fewer than this many theme answers "
+                         "(default 1, so no puzzle is themeless; 3+ is not "
+                         "achievable on a 5x5 with a list this size)")
     ap.add_argument("--seed", type=int, default=None)
     args = ap.parse_args()
 
@@ -292,8 +385,10 @@ def main():
         if result is None:
             continue
         new_words = {w for w, _c in result["across"].values()} | {w for w, _c in result["down"].values()}
-        if len(new_words & used_words) > 1:
+        if len(new_words & used_words) > args.max_repeat:
             continue  # too much overlap with prior puzzles, try another seed
+        if len(new_words & set(theme_words)) < args.min_theme:
+            continue  # not enough theme content to earn a place in this set
         existing_bank.append(result)
         used_words |= new_words
         made += 1
@@ -306,8 +401,10 @@ def main():
               f" | {' / '.join(w for w, _ in result['down'].values())}")
 
     if made < args.count:
-        print(f"Only generated {made}/{args.count} — your theme word list may be too sparse "
-              f"for the remaining slots. Add more short (3-5 letter) theme words and re-run.",
+        print(f"Only generated {made}/{args.count}. Usually this is the "
+              f"--max-repeat limit (currently {args.max_repeat}), not the word "
+              f"list: as a set grows, every new grid shares more answers with "
+              f"earlier ones. Raise --max-repeat, or add more 3-5 letter words.",
               file=sys.stderr)
 
     out_path.write_text(json.dumps(existing_bank, indent=2))
