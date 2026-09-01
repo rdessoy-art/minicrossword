@@ -366,5 +366,143 @@
         "Voice type between soprano and tenor"
       ]
     }
+  },
+  {
+    "across": {
+      "1": [
+        "ARM",
+        "Shoulder to hand"
+      ],
+      "7": [
+        "ISSUE",
+        "Magazine number"
+      ],
+      "8": [
+        "STORE",
+        "Shop"
+      ],
+      "5": [
+        "REACH",
+        "Stretch out to touch"
+      ],
+      "9": [
+        "NET",
+        "Fishing gear, or a total after deductions"
+      ]
+    },
+    "down": {
+      "2": [
+        "REST",
+        "Take a break"
+      ],
+      "3": [
+        "MASON",
+        "Bricklayer"
+      ],
+      "1": [
+        "ARISE",
+        "Get up"
+      ],
+      "6": [
+        "CURE",
+        "Remedy for an ailment"
+      ],
+      "4": [
+        "SHEET",
+        "Bed linen"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "ACT",
+        "Part of a play"
+      ],
+      "8": [
+        "ELITE",
+        "The very best of a group"
+      ],
+      "5": [
+        "MARIA",
+        "West Side Story song"
+      ],
+      "7": [
+        "BLANK",
+        "Empty space"
+      ],
+      "9": [
+        "NON",
+        "___-stop meaning without a break"
+      ]
+    },
+    "down": {
+      "2": [
+        "CALL",
+        "Ring up"
+      ],
+      "1": [
+        "AMBER",
+        "Traffic light colour"
+      ],
+      "3": [
+        "TRAIN",
+        "Rail transport"
+      ],
+      "6": [
+        "INTO",
+        "Heading inside"
+      ],
+      "4": [
+        "TAKEN",
+        "Already occupied"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "BAT",
+        "Cricket willow"
+      ],
+      "5": [
+        "ERROR",
+        "Slip-up"
+      ],
+      "8": [
+        "LADEN",
+        "Weighed down with cargo"
+      ],
+      "7": [
+        "LEAVE",
+        "Depart"
+      ],
+      "9": [
+        "END",
+        "The finish"
+      ]
+    },
+    "down": {
+      "2": [
+        "AREA",
+        "Measured space"
+      ],
+      "3": [
+        "TRADE",
+        "Buy and sell"
+      ],
+      "1": [
+        "BELLY",
+        "The stomach"
+      ],
+      "6": [
+        "OVEN",
+        "Where you bake"
+      ],
+      "4": [
+        "TREND",
+        "Way fashion is heading"
+      ]
+    }
   }
 ]

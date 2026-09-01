@@ -1,0 +1,635 @@
+# general.csv — word,clue
+# Everyday English words for the untethered "General" theme.
+# Only 3-5 letter words are ever placed on the 5x5 grid; each puzzle needs
+# six 5-letter / two 4-letter / two 3-letter answers, so 5s matter most.
+# Clues must not contain commas — the loader reads row[1] only.
+# Theme entries bypass BLOCKLIST, so keep this list clean by construction.
+
+# --- three letters ---
+ACE,Card above the king
+ACT,Part of a play
+AGE,Years behind you
+AID,Help given
+AIM,Point at a target
+AIR,What we breathe
+ARM,Shoulder to hand
+ART,Gallery contents
+BAG,Shopping carrier
+BAT,Cricket willow
+BED,Where you sleep
+BEE,Honey maker
+BOX,Cardboard container
+BOY,Young lad
+BUS,Public transport
+CAP,Peaked headwear
+CAR,Family motor
+CAT,Feline pet
+COW,Field milker
+CUP,Tea vessel
+DAY,Twenty-four hours
+DOG,Loyal companion
+EAR,Hearing organ
+EGG,Breakfast oval
+EYE,Organ of sight
+FAN,Cooling blades
+FOX,Cunning creature
+FUN,Good times
+HAT,Head topper
+HEN,Egg layer
+ICE,Frozen water
+INK,Pen filler
+JAM,Toast spread
+JAR,Preserve pot
+JET,Fast aircraft
+JOB,Daily work
+JOY,Great delight
+KEY,Lock opener
+LAW,Rule of the land
+LEG,Limb for walking
+LID,Jar topper
+LIP,Mouth edge
+LOG,Fireplace fuel
+MAP,Route guide
+MUD,Wet earth
+OAK,Mighty tree
+OAR,Rowing blade
+OWL,Night bird
+PAN,Frying vessel
+PEN,Writing tool
+PET,Household animal
+PIE,Baked filling
+PIG,Farmyard grunter
+PIN,Sewing point
+POT,Cooking vessel
+ROW,Line of seats
+RUG,Floor covering
+SEA,Salt water
+SKY,Overhead blue
+SON,Male offspring
+SUN,Daytime star
+TEA,Afternoon brew
+TIE,Neck accessory
+TOE,Foot digit
+TOP,Highest point
+TOY,Child's plaything
+VAN,Delivery vehicle
+WEB,Spider's work
+ZOO,Animal park
+
+# --- four letters ---
+ABLE,Capable of doing
+AREA,Measured space
+ARMY,Land forces
+BABY,Newborn child
+BAND,Group of musicians
+BANK,Money keeper
+BARN,Farm building
+BATH,Long soak
+BEAM,Ray of light
+BEAR,Woodland giant
+BELL,It rings out
+BIRD,Feathered flyer
+BOAT,Water craft
+BOOK,Bound pages
+BOWL,Soup dish
+CAKE,Birthday bake
+CALM,Free from fuss
+CAMP,Tented stay
+CARD,Birthday sender
+CAVE,Hollow in rock
+CITY,Large town
+CLAY,Potter's material
+COAT,Winter outerwear
+COIN,Pocket money
+COOK,Kitchen worker
+CORN,Crop on the cob
+CROP,Farmer's yield
+DAWN,Break of day
+DESK,Office table
+DISH,Serving plate
+DOOR,Entrance panel
+DRUM,Percussion item
+DUCK,Pond bird
+EDGE,Outer border
+EXIT,Way out
+FACE,Front of the head
+FARM,Land holding
+FILM,Cinema feature
+FIRE,Flames burning
+FISH,River swimmer
+FLAG,National banner
+FOOD,What we eat
+FORK,Table utensil
+FROG,Pond hopper
+GATE,Garden entrance
+GIFT,Wrapped present
+GOAL,Aim scored
+GOAT,Hill climber
+GOLD,Precious metal
+HAIR,Head covering
+HAND,End of the arm
+HERO,Brave figure
+HILL,Gentle rise
+HOME,Where you live
+HOPE,Wish for better
+HORN,Brass instrument
+IDEA,Bright thought
+IRON,Pressing tool
+ITEM,Single thing
+JUMP,Leap upward
+KING,Crowned ruler
+KITE,String flyer
+LAKE,Inland water
+LAMP,Light source
+LAND,Solid ground
+LEAF,Tree greenery
+LENS,Camera glass
+LION,Big cat
+LIST,Written run-down
+LOCK,Key partner
+MAIL,Posted letters
+MEAL,Sitting of food
+MENU,Choice of dishes
+MILK,Dairy drink
+MOON,Night orb
+NEST,Bird's home
+NEWS,Daily bulletin
+NOSE,Smelling organ
+NOTE,Short message
+PAGE,Book leaf
+PARK,Green space
+PATH,Way through
+PLAN,Worked-out scheme
+POEM,Verse work
+POND,Small water
+POOL,Swimming spot
+RAIN,Falling water
+RICE,Grain side dish
+RING,Finger band
+ROAD,Route for cars
+ROCK,Solid stone
+ROOF,House topper
+ROOM,Space indoors
+ROPE,Thick cord
+ROSE,Thorny bloom
+SALT,Table seasoning
+SAND,Beach material
+SEAT,Place to sit
+SHIP,Ocean vessel
+SHOE,Foot cover
+SHOP,Retail outlet
+SNOW,Winter fall
+SONG,Sung piece
+SOUP,Starter bowl
+STAR,Night twinkler
+STEP,Stair tread
+TALE,Told story
+TANK,Liquid holder
+TEAM,Side in a match
+TENT,Camping shelter
+TREE,Woodland growth
+TRIP,Short journey
+TUNE,Catchy melody
+WALK,Go on foot
+WALL,Brick divider
+WAVE,Sea roller
+WEEK,Seven days
+WIND,Moving air
+WINE,Grape drink
+WING,Bird's limb
+WOLF,Pack hunter
+WOOD,Timber
+WORD,Unit of speech
+WORK,Daily labour
+YARD,Garden space
+YEAR,Twelve months
+ZONE,Marked area
+
+# --- five letters ---
+ABOVE,Higher up
+ACORN,Oak's seed
+ADULT,Grown-up
+AGENT,One who acts for you
+AGREE,Share the view
+ALARM,Morning waker
+ALBUM,LP record
+ALERT,On the lookout
+ALIEN,Being from space
+ALIKE,Much the same
+ALLOW,Permit
+ALONE,By oneself
+AMBER,Traffic light colour
+ANGEL,Winged figure
+ANKLE,Foot joint
+APPLE,Orchard fruit
+APRON,Cook's cover
+ARENA,Sports venue
+ARROW,Bow's partner
+BACON,Breakfast rasher
+BADGE,Pinned emblem
+BAKER,Bread maker
+BEACH,Sandy shore
+BEARD,Chin growth
+BEGIN,Make a start
+BENCH,Park seat
+BERRY,Small soft fruit
+BIRCH,Silver tree
+BLEND,Mix together
+BLOCK,Solid lump
+BLOOM,Come into flower
+BOARD,Plank of wood
+BRAIN,Thinking organ
+BRAND,Maker's name
+BRAVE,Full of courage
+BREAD,Loaf
+BREAK,Short rest
+BRICK,Building block
+BRIEF,Not lasting long
+BRING,Fetch along
+BROAD,Wide
+BROOK,Small stream
+BROOM,Sweeping tool
+BROWN,Chestnut shade
+BRUSH,Painter's tool
+BUILD,Put up
+CABIN,Log dwelling
+CABLE,Thick wire
+CANAL,Narrowboat water
+CANOE,Paddled craft
+CARGO,Ship's freight
+CHAIN,Linked metal
+CHAIR,Seat with a back
+CHALK,Blackboard stick
+CHARM,Winning appeal
+CHART,Data picture
+CHEEK,Side of the face
+CHEER,Glad shout
+CHESS,Board game of kings
+CHEST,Torso or trunk
+CHIEF,Head of the tribe
+CHILD,Young one
+CHOIR,Singing group
+CLEAN,Free of dirt
+CLEAR,Easy to see through
+CLIFF,Steep drop
+CLIMB,Go up
+CLOCK,Wall timekeeper
+CLOTH,Woven material
+CLOUD,Sky drifter
+COACH,Team trainer
+COAST,Shoreline
+COUNT,Tot up
+COURT,Tennis surface
+COVER,Put a lid on
+CRANE,Lifting machine
+CREAM,Top of the milk
+CROWD,Big gathering
+CROWN,Monarch's headwear
+CURVE,Gentle bend
+CYCLE,Ride a bike
+DAISY,Lawn flower
+DANCE,Move to music
+DELTA,River mouth
+DIARY,Daily record
+DOZEN,Twelve
+DREAM,Sleeping vision
+DRESS,Frock
+DRIFT,Move slowly along
+DRINK,Take a sip
+DRIVE,Take the wheel
+EAGLE,Soaring raptor
+EARLY,Ahead of time
+EARTH,Our planet
+EIGHT,Number after seven
+ELBOW,Arm joint
+ELDER,Older one
+EMPTY,Nothing inside
+ENJOY,Take pleasure in
+ENTER,Go inside
+EQUAL,Just the same
+ERROR,Slip-up
+ESSAY,Written composition
+EVENT,Happening
+EVERY,Each one
+EXTRA,More than needed
+FABLE,Moral story
+FENCE,Garden boundary
+FERRY,Crossing boat
+FIELD,Grassy expanse
+FINAL,Last of all
+FIRST,Before the rest
+FLAME,Fire's tongue
+FLASH,Sudden light
+FLEET,Group of ships
+FLOAT,Stay on the surface
+FLOOR,You stand on it
+FLOUR,Baking powder base
+FLUTE,Woodwind pipe
+FOCUS,Sharpen the view
+FORCE,Push or pull
+FOUND,Came across
+FRAME,Picture surround
+FRESH,Newly made
+FRONT,Opposite of back
+FROST,Icy coating
+FRUIT,Apple or pear
+GHOST,Spooky spirit
+GIANT,Very large one
+GLASS,Window material
+GLOBE,World model
+GLOVE,Hand warmer
+GRACE,Elegance of movement
+GRADE,Mark for schoolwork
+GRAIN,Wheat unit
+GRAND,Very impressive
+GRAPE,Vine fruit
+GRASS,Lawn covering
+GREAT,Really good
+GREEN,Grass shade
+GUARD,One who protects
+GUEST,Visitor
+GUIDE,One who shows the way
+HAPPY,Full of cheer
+HEART,Beating organ
+HEAVY,Hard to lift
+HEDGE,Garden boundary bush
+HELLO,Friendly greeting
+HONEY,Bee product
+HORSE,Stable dweller
+HOTEL,Overnight stay
+HOUSE,Family dwelling
+HUMAN,One of us
+IDEAL,Just perfect
+IMAGE,Picture
+INDEX,Back-of-book list
+INNER,Further in
+ISSUE,Magazine number
+JEWEL,Precious stone
+JOINT,Where bones meet
+JUDGE,Court official
+JUICE,Squeezed drink
+KNIFE,Cutting blade
+LABEL,Stuck-on tag
+LARGE,Big
+LASER,Focused light beam
+LATER,After a while
+LAUGH,Burst of mirth
+LAYER,One thickness
+LEARN,Take in knowledge
+LEAVE,Depart
+LEMON,Sour citrus
+LEVEL,Perfectly flat
+LEVER,Bar for shifting
+LIGHT,Not heavy
+LIMIT,Furthest point
+LOCAL,From round here
+LODGE,Ski accommodation
+LOGIC,Sound reasoning
+LOOSE,Not tight
+LOWER,Bring down
+LOYAL,Faithful
+LUCKY,Blessed with fortune
+LUNCH,Midday meal
+MAGIC,Conjuring art
+MAPLE,Syrup tree
+MARCH,Month after February
+MATCH,Contest
+MEDAL,Winner's disc
+MELON,Summer fruit
+MERGE,Join together
+MERRY,Cheerful
+METAL,Iron or tin
+METER,Measuring device
+MODEL,Scale version
+MONEY,Cash
+MONTH,Calendar division
+MOTOR,Engine
+MOUSE,Small scurrier
+MOUTH,Where food goes
+MOVIE,Feature film
+MUSIC,Tuneful art
+NIGHT,After dark
+NOBLE,High-born
+NOISE,Loud sound
+NORTH,Compass point
+NOVEL,Long story
+NURSE,Ward carer
+OCEAN,Atlantic or Pacific
+OFFER,Put forward
+ONION,Layered bulb
+OPERA,Sung drama
+ORBIT,Path round a planet
+ORDER,Put in sequence
+ORGAN,Church instrument
+OTTER,River swimmer
+OUTER,On the outside
+OWNER,One who possesses
+PAINT,Wall colour
+PANEL,Flat section
+PAPER,Newsprint
+PARTY,Celebration
+PASTA,Italian staple
+PATCH,Repair piece
+PAUSE,Brief stop
+PEACE,Calm and quiet
+PEACH,Fuzzy fruit
+PEARL,Oyster gem
+PEDAL,Foot control
+PENNY,Small coin
+PHONE,Calling device
+PHOTO,Snapshot
+PIANO,Keyboard instrument
+PIECE,Single part
+PILOT,Aircraft flyer
+PITCH,Football field
+PLACE,Location
+PLAIN,Simple
+PLANE,Flying craft
+PLANT,Garden growth
+PLATE,Dinner ware
+POINT,Sharp end
+POWER,Strength
+PRESS,Push down
+PRICE,What it costs
+PRIDE,Sense of worth
+PRIZE,Winner's reward
+PROOF,Firm evidence
+PROUD,Pleased with oneself
+PULSE,Wrist beat
+PUPIL,School attender
+QUEEN,Crowned lady
+QUEST,Long search
+QUICK,Speedy
+QUIET,Making no sound
+QUILT,Padded bedcover
+QUOTE,Cite the words of
+RADIO,Wireless set
+RAISE,Lift up
+RANCH,Cattle spread
+RANGE,Span
+RAPID,Very quick
+REACH,Stretch out to touch
+RIDER,One on horseback
+RIDGE,Hill crest
+RIGHT,Not left
+RIVER,Flowing water
+ROBIN,Red-breasted bird
+ROBOT,Mechanical worker
+ROUND,Circular
+ROUTE,Way to go
+ROYAL,Fit for a king
+RULER,Measuring stick
+SALAD,Bowl of greens
+SAUCE,Poured topping
+SCALE,Weighing device
+SCENE,Part of an act
+SCENT,Pleasant smell
+SCORE,Match tally
+SCOUT,One who explores
+SENSE,Sight or smell
+SERVE,Wait upon
+SEVEN,Number after six
+SHADE,Shelter from sun
+SHAKE,Move to and fro
+SHAPE,Form
+SHARE,Divide up
+SHARK,Ocean predator
+SHARP,Keen-edged
+SHEEP,Woolly grazer
+SHEET,Bed linen
+SHELF,Wall ledge
+SHELL,Beach find
+SHIFT,Move along
+SHINE,Give off light
+SHIRT,Buttoned top
+SHORE,Water's edge
+SHORT,Not tall
+SIGHT,Sense of seeing
+SLEEP,Nightly rest
+SLICE,Cut piece
+SLIDE,Playground chute
+SLOPE,Incline
+SMALL,Little
+SMART,Clever
+SMELL,Use the nose
+SMILE,Happy look
+SMOKE,Fire's plume
+SNACK,Bite between meals
+SNAIL,Shelled crawler
+SNAKE,Slithering reptile
+SOLAR,Of the sun
+SOLID,Firm throughout
+SOLVE,Work out
+SOUND,What you hear
+SOUTH,Compass opposite of north
+SPACE,The final frontier
+SPARE,Kept in reserve
+SPARK,Tiny flash
+SPEAK,Say words
+SPEED,Rate of travel
+SPELL,Put letters in order
+SPEND,Lay out money
+SPICE,Curry flavour
+SPINE,Backbone
+SPOKE,Wheel rod
+SPOON,Stirring utensil
+SPORT,Athletic pursuit
+SQUAD,Team group
+STAGE,Theatre platform
+STAIR,Step up
+STAMP,Letter sticker
+STAND,Get to your feet
+STARE,Look hard
+START,Begin
+STATE,Texas for one
+STEAM,Kettle's output
+STEEL,Strong alloy
+STICK,Wooden length
+STOCK,Goods in hand
+STONE,Rock piece
+STORE,Shop
+STORM,Wild weather
+STORY,Told tale
+STOVE,Cooking range
+STRAW,Drinking tube
+STUDY,Learn hard
+STYLE,Way of doing
+SUGAR,Sweetener
+SUNNY,Bright and clear
+SUPER,Excellent
+SWEET,Sugary
+SWIFT,Very fast
+SWING,Playground seat
+TABLE,Dining furniture
+TASTE,Tongue's sense
+TEACH,Pass on learning
+TEETH,Mouth grinders
+THEME,Recurring subject
+THICK,Not thin
+THING,Object
+THINK,Use the mind
+THIRD,After second
+THREE,Number after two
+THROW,Hurl
+THUMB,Hand digit
+TIGER,Striped cat
+TIGHT,Firmly fixed
+TITLE,Book's name
+TOAST,Browned bread
+TODAY,This very day
+TOKEN,Symbolic gesture
+TOOTH,One of a set
+TOPIC,Subject
+TORCH,Handheld light
+TOTAL,Sum of it all
+TOUCH,Feel with a finger
+TOWEL,Drying cloth
+TOWER,Tall structure
+TRACK,Path or trail
+TRADE,Buy and sell
+TRAIL,Route to follow
+TRAIN,Rail transport
+TREAT,Special something
+TREND,Way fashion is heading
+TRIAL,Test run
+TRIBE,Kinship group
+TRICK,Clever ruse
+TRUCK,Goods vehicle
+TRUNK,Elephant's nose
+TRUST,Firm belief
+TRUTH,What is so
+TWIST,Turn sharply
+UNCLE,Aunt's husband
+UNDER,Beneath
+UNION,Joining together
+UNITE,Bring together
+UNTIL,Up to the time of
+UPPER,Higher of two
+URBAN,Of the town
+USUAL,As per normal
+VALUE,What it is worth
+VALVE,Flow controller
+VENUE,Where it happens
+VERSE,Poem section
+VIDEO,Moving picture
+VISIT,Call upon
+VOICE,Speaking sound
+WAGON,Horse-drawn cart
+WATCH,Wrist timepiece
+WATER,Clear liquid
+WEAVE,Work a loom
+WHALE,Ocean giant
+WHEAT,Bread grain
+WHEEL,Round turner
+WHITE,Snow shade
+WHOLE,Complete
+WOMAN,Adult female
+WORLD,The globe
+WORTH,Value of
+WRIST,Hand joint
+WRITE,Put on paper
+YACHT,Sailing vessel
+YIELD,Give way
+YOUNG,Not old
+YOUTH,Early years
+ZEBRA,Striped grazer

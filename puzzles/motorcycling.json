@@ -7,15 +7,15 @@
       ],
       "8": [
         "EDGES",
-        "TODO: write a clue for EDGES"
+        "Outer borders"
       ],
       "7": [
         "INNER",
-        "TODO: write a clue for INNER"
+        "Further in"
       ],
       "5": [
         "RAISE",
-        "TODO: write a clue for RAISE"
+        "Lift up"
       ],
       "9": [
         "ONE",
@@ -25,15 +25,15 @@
     "down": {
       "2": [
         "SAND",
-        "TODO: write a clue for SAND"
+        "Beach material"
       ],
       "3": [
         "BINGO",
-        "TODO: write a clue for BINGO"
+        "Hall game with numbered balls"
       ],
       "1": [
         "BRIEF",
-        "TODO: write a clue for BRIEF"
+        "Not lasting long"
       ],
       "4": [
         "VERSE",
@@ -41,7 +41,7 @@
       ],
       "6": [
         "SEEN",
-        "TODO: write a clue for SEEN"
+        "Observed"
       ]
     }
   },
@@ -49,7 +49,7 @@
     "across": {
       "1": [
         "ATE",
-        "TODO: write a clue for ATE"
+        "Had dinner"
       ],
       "9": [
         "YET",
@@ -57,7 +57,7 @@
       ],
       "5": [
         "LIVES",
-        "TODO: write a clue for LIVES"
+        "Exists"
       ],
       "7": [
         "IDEAS",
@@ -83,11 +83,11 @@
       ],
       "2": [
         "TIDE",
-        "TODO: write a clue for TIDE"
+        "The sea's rise and fall"
       ],
       "1": [
         "ALIVE",
-        "TODO: write a clue for ALIVE"
+        "Still living"
       ]
     }
   },
@@ -103,11 +103,11 @@
       ],
       "8": [
         "STORE",
-        "TODO: write a clue for STORE"
+        "Shop"
       ],
       "5": [
         "REACH",
-        "TODO: write a clue for REACH"
+        "Stretch out to touch"
       ],
       "9": [
         "NET",
@@ -117,7 +117,7 @@
     "down": {
       "2": [
         "REST",
-        "TODO: write a clue for REST"
+        "Take a break"
       ],
       "3": [
         "MASON",
@@ -125,15 +125,383 @@
       ],
       "1": [
         "ARISE",
-        "TODO: write a clue for ARISE"
+        "Get up"
       ],
       "6": [
         "CURE",
-        "TODO: write a clue for CURE"
+        "Remedy for an ailment"
       ],
       "4": [
         "SHEET",
-        "TODO: write a clue for SHEET"
+        "Bed linen"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "MOD",
+        "Scooter-riding rival of the rockers"
+      ],
+      "7": [
+        "RAPID",
+        "Lightning-fast"
+      ],
+      "5": [
+        "ARENA",
+        "Sports venue"
+      ],
+      "8": [
+        "CLONE",
+        "Exact genetic copy"
+      ],
+      "9": [
+        "TEN",
+        "Perfect score, some say"
+      ]
+    },
+    "down": {
+      "2": [
+        "ORAL",
+        "Spoken rather than written"
+      ],
+      "3": [
+        "DEPOT",
+        "Bus or train station"
+      ],
+      "1": [
+        "MARCO",
+        "Bezzecchi's first name"
+      ],
+      "6": [
+        "NINE",
+        "One below ten"
+      ],
+      "4": [
+        "LADEN",
+        "Weighed down with cargo"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "SPA",
+        "Belgian circuit at Francorchamps"
+      ],
+      "7": [
+        "ATLAS",
+        "Book of maps"
+      ],
+      "9": [
+        "YES",
+        "The affirmative"
+      ],
+      "5": [
+        "TALES",
+        "Stories"
+      ],
+      "8": [
+        "THOSE",
+        "Not these"
+      ]
+    },
+    "down": {
+      "2": [
+        "PATH",
+        "Way through"
+      ],
+      "3": [
+        "ALLOY",
+        "Metal blend used for wheels"
+      ],
+      "4": [
+        "ESSES",
+        "Linked S-shaped curves"
+      ],
+      "6": [
+        "EASE",
+        "Freedom from effort"
+      ],
+      "1": [
+        "STATE",
+        "Texas for one"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "SAM",
+        "Lowes the 2013 world champion"
+      ],
+      "8": [
+        "LYING",
+        "Stretched out flat"
+      ],
+      "5": [
+        "AWARE",
+        "Conscious of it"
+      ],
+      "7": [
+        "LASER",
+        "Focused beam of light"
+      ],
+      "9": [
+        "ATE",
+        "Had dinner"
+      ]
+    },
+    "down": {
+      "2": [
+        "AWAY",
+        "Not at home"
+      ],
+      "3": [
+        "MASIA",
+        "Jaume the 2023 Moto3 champion"
+      ],
+      "1": [
+        "SALLY",
+        "A girl's name"
+      ],
+      "4": [
+        "MERGE",
+        "Join together"
+      ],
+      "6": [
+        "RENT",
+        "Monthly payment to a landlord"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "ASH",
+        "What is left after a fire"
+      ],
+      "9": [
+        "ANY",
+        "Some at all"
+      ],
+      "8": [
+        "ELDER",
+        "Older, more senior person"
+      ],
+      "5": [
+        "LOOSE",
+        "Slack like a chain needing adjustment"
+      ],
+      "7": [
+        "TUNER",
+        "One who sets up an engine"
+      ]
+    },
+    "down": {
+      "3": [
+        "HONDA",
+        "Japanese maker of the Fireblade"
+      ],
+      "2": [
+        "SOUL",
+        "Motown music style"
+      ],
+      "6": [
+        "SEEN",
+        "Observed"
+      ],
+      "1": [
+        "ALTER",
+        "Change or modify"
+      ],
+      "4": [
+        "FERRY",
+        "Boat that shuttles across water"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "ERA",
+        "Historical period"
+      ],
+      "7": [
+        "ELDER",
+        "Older, more senior person"
+      ],
+      "5": [
+        "LODGE",
+        "Ski resort accommodation"
+      ],
+      "9": [
+        "DRY",
+        "Sort of tyre for sunshine"
+      ],
+      "8": [
+        "CLEAR",
+        "Easy to see through"
+      ]
+    },
+    "down": {
+      "1": [
+        "ELECT",
+        "Vote into office"
+      ],
+      "3": [
+        "ADDED",
+        "Summed up"
+      ],
+      "2": [
+        "ROLL",
+        "Bread bun"
+      ],
+      "6": [
+        "GEAR",
+        "One of six on the box"
+      ],
+      "4": [
+        "MERRY",
+        "Cheerful"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "TWO",
+        "Number after one"
+      ],
+      "9": [
+        "NEW",
+        "Not used before"
+      ],
+      "7": [
+        "ALIEN",
+        "Extraterrestrial being"
+      ],
+      "5": [
+        "RANGE",
+        "Kitchen appliance with burners"
+      ],
+      "8": [
+        "CLONE",
+        "Exact genetic copy"
+      ]
+    },
+    "down": {
+      "3": [
+        "ONION",
+        "Vegetable that brings tears"
+      ],
+      "4": [
+        "RENEW",
+        "Extend a library book"
+      ],
+      "6": [
+        "GENE",
+        "Unit of DNA"
+      ],
+      "2": [
+        "WALL",
+        "Surface for hanging art"
+      ],
+      "1": [
+        "TRACK",
+        "Where the racing happens"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "SEC",
+        "Moment in short"
+      ],
+      "7": [
+        "OCEAN",
+        "Atlantic or Pacific"
+      ],
+      "9": [
+        "KEY",
+        "It opens a lock"
+      ],
+      "5": [
+        "CARGO",
+        "A ship's freight"
+      ],
+      "8": [
+        "THEME",
+        "Recurring subject"
+      ]
+    },
+    "down": {
+      "2": [
+        "EACH",
+        "Every one"
+      ],
+      "3": [
+        "CREEK",
+        "Small stream"
+      ],
+      "4": [
+        "MONEY",
+        "Cash"
+      ],
+      "1": [
+        "SCOTT",
+        "Redding the 2019 BSB champion"
+      ],
+      "6": [
+        "GAME",
+        "Match or contest"
+      ]
+    }
+  },
+  {
+    "across": {
+      "1": [
+        "ACT",
+        "Part of a play"
+      ],
+      "8": [
+        "UNCLE",
+        "Your aunt's husband"
+      ],
+      "5": [
+        "LORIS",
+        "Baz of WSBK"
+      ],
+      "7": [
+        "BRASS",
+        "Trumpet section metal"
+      ],
+      "9": [
+        "TEN",
+        "Perfect score, some say"
+      ]
+    },
+    "down": {
+      "2": [
+        "CORN",
+        "Crop on the cob"
+      ],
+      "1": [
+        "ALBUM",
+        "LP record"
+      ],
+      "3": [
+        "TRACT",
+        "Stretch of land"
+      ],
+      "6": [
+        "ISLE",
+        "___ of Man home of the TT"
+      ],
+      "4": [
+        "ASSEN",
+        "Dutch venue called the Cathedral of Speed"
       ]
     }
   }
