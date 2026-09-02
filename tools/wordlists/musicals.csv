@@ -1,0 +1,227 @@
+# musicals.csv — word,clue
+# Musical shows and films: titles, characters, songs, songwriters,
+# performers and the language of the theatre.
+# Only 3-5 letter words are ever placed on the 5x5 grid; each puzzle needs
+# six 5-letter / two 4-letter / two 3-letter answers, so 5s matter most.
+# Longer titles (GREASE OLIVER WICKED CHICAGO CABARET HAMILTON) can't be
+# used at this grid size — clue them through a shorter part instead.
+# Clues must not contain commas — the loader reads row[1] only.
+
+# --- three letters ---
+ACT,Part of a show
+CUE,Signal to come on
+PIT,Where the orchestra sits
+TAP,Dance done in metal-tipped shoes
+SET,Stage scenery
+SIX,Musical about Henry VIII's wives
+MIA,Mamma ___! the ABBA musical
+LES,___ Miserables
+EBB,Kander's writing partner
+IRA,Gershwin who wrote the lyrics
+TIM,Rice who wrote with Lloyd Webber
+LIN,___-Manuel Miranda of Hamilton
+BOB,Fosse the choreographer
+ZAC,Efron of High School Musical
+RUN,How long a show stays booked
+HIT,Smash success
+ROW,Where your seat is
+BOW,What the cast takes at the end
+KEY,What a song is written in
+BAR,Unit of written music
+DUO,Two performing together
+POP,Chart music style
+GIG,Booked performance
+TOP,___ Hat with Fred Astaire
+AIR,Simple melody
+DIM,What the house lights do
+FAN,Devoted follower
+WIG,Costume department hairpiece
+TIE,Formal evening neckwear
+ODE,Song of praise
+
+# --- four letters ---
+CATS,Lloyd Webber musical of T S Eliot poems
+HAIR,Rock musical of the 1960s
+RENT,Musical set in the East Village
+FAME,Musical about a performing arts school
+GIGI,Best Picture winner set in Paris
+NINE,Musical based on a Fellini film
+ONCE,Musical of the Irish busking film
+AIDA,Elton John musical of an opera
+GLEE,TV show full of show tunes
+JETS,Rival gang in West Side Story
+TONY,Broadway's top award
+WEST,___ Side Story
+SIDE,West ___ Story
+KING,The ___ and I
+LION,The ___ King
+BOOK,A musical's spoken script
+CAST,Everyone in the show
+ROLE,Part an actor plays
+STAR,Top-billed performer
+DIVA,Demanding leading lady
+SOLO,Sung alone
+DUET,Sung by two
+TRIO,Sung by three
+ALTO,Voice below soprano
+BASS,Lowest singing voice
+BAND,Musicians in the pit
+SONG,Number in the show
+ACTS,Halves of the evening
+CUES,Signals to performers
+SETS,Built scenery
+TAPS,Metal plates on dance shoes
+MIME,Acting without words
+TUTU,Ballet skirt
+SHOE,Dancer's footwear
+KICK,High leg move in a chorus line
+JAZZ,Dance style with sharp angles
+FILM,Screen version
+REEL,Length of film
+NOTE,Written pitch
+KEYS,Piano's black and white
+DRUM,Pit percussion
+HARP,Strings plucked in the pit
+EMMY,Television award
+LIZA,Minnelli of Cabaret
+JUDY,Garland of The Wizard of Oz
+TOTO,Dorothy's little dog
+GENE,Kelly who sang in the rain
+FRED,Astaire the dancer
+BING,Crosby of White Christmas
+ABBA,Swedish group behind Mamma Mia
+COLE,Porter the songwriter
+HART,Rodgers' first lyricist
+RICE,Tim who wrote Evita's words
+ALAN,Menken the Disney composer
+BOCK,Fiddler on the Roof composer
+JULE,Styne who wrote Gypsy
+HUGH,Jackman of The Greatest Showman
+EMMA,Stone of La La Land
+RYAN,Gosling of La La Land
+ELSA,Frozen's ice queen
+ANNA,Elsa's sister
+OLAF,Frozen's snowman
+SCAR,The Lion King villain
+NALA,Simba's childhood friend
+MARY,Poppins the magical nanny
+BERT,Mary Poppins' chimney sweep
+COCO,Pixar musical set in Mexico
+MASK,What the Phantom wears
+RAIN,Singin' in the ___
+STEP,Dance move
+WING,Where actors wait offstage
+PROP,Object carried on stage
+LINE,Actor's spoken words
+SHOW,The production itself
+TOUR,Taking a production round the country
+HALL,Where a concert is held
+SEAT,Ticket holder's place
+SOUL,Music with feeling
+BEAT,Rhythm's pulse
+FOLK,Traditional song style
+ARIA,Big solo number
+HORN,Brass in the pit
+BELL,It rings before curtain up
+DARK,What a theatre goes on a Monday
+
+# --- five letters ---
+EVITA,Lloyd Webber musical about Peron
+ANNIE,Musical orphan with red hair
+CHESS,Musical written by two of ABBA
+SHREK,Green ogre with his own musical
+MOANA,Disney musical set in the Pacific
+TOMMY,The Who's rock opera
+DOLLY,Hello ___! on Broadway
+GYPSY,Musical about Rose and her daughters
+MAMMA,___ Mia! the ABBA musical
+MARIA,Song from West Side Story
+ELIZA,My Fair Lady's flower girl
+JUDAS,Jesus Christ Superstar role
+OPERA,The Phantom of the ___
+ROCKY,___ Horror Picture Show
+SIMBA,The Lion King's hero
+ARIEL,The Little Mermaid
+BELLE,Beauty in the Disney musical
+GENIE,Aladdin's wish granter
+SANDY,Grease's good girl
+DANNY,Grease's leading boy
+RIZZO,Pink Lady in Grease
+FOSSE,Choreographer of Chicago
+LLOYD,Andrew ___ Webber
+LOEWE,Lerner's composing partner
+STYNE,Jule who wrote Funny Girl
+ELTON,John who scored The Lion King
+JULIE,Andrews of The Sound of Music
+KELLY,Gene who danced in the rain
+DORIS,Day of Calamity Jane
+IDINA,Menzel who sang Let It Go
+PATTI,LuPone the Broadway legend
+BETTE,Midler the singer and actress
+OSCAR,Film award
+STAGE,Where it all happens
+SCORE,All the music written down
+MUSIC,The Sound of ___
+SOUND,The ___ of Music
+LYRIC,Line of a song's words
+VERSE,Part before the chorus
+CHORD,Notes played together
+NOTES,Marks on the stave
+PIANO,Keyboard in the pit
+CELLO,Large bowed instrument
+FLUTE,Woodwind in the orchestra
+BATON,What the conductor waves
+TENOR,High male voice
+SOLOS,Numbers sung alone
+DANCE,Move to the music
+STEPS,Routine's moves
+PROPS,Things handled on stage
+WINGS,Sides of the stage
+LINES,What the cast must learn
+SCENE,Part of an act
+DRAMA,Serious theatre
+FARCE,Broad comedy
+REVUE,Show of songs and sketches
+DEBUT,First appearance
+USHER,One who shows you to your seat
+FOYER,Theatre entrance hall
+MOVIE,Film
+SHOES,Dancer's tap pair
+SUGAR,A spoonful of ___
+JOLLY,___ Holiday from Mary Poppins
+ELDER,Book of Mormon missionary
+SWING,Performer who covers many roles
+CHOIR,Group of singers
+ACTOR,One in the cast
+EXTRA,Performer with no lines
+STARS,Top of the bill
+SHOWS,Productions
+SONGS,Numbers in a musical
+TUNES,Melodies
+NIGHT,Opening ___
+APRON,Stage front beyond the arch
+RISER,Raised platform on stage
+BOXES,Private theatre seats
+AISLE,Walkway between the seats
+BRAVO,Shout at the curtain call
+CHEER,What the audience gives
+CROWD,The audience
+HOUSE,The auditorium and all in it
+TRACK,Song on a cast recording
+ALBUM,Cast recording
+VINYL,Format of an old cast album
+RADIO,Where show tunes get played
+LIGHT,Stage illumination
+SMOKE,Stage effect haze
+DRESS,___ rehearsal
+BRASS,Trumpets and trombones
+DRUMS,Percussion kit
+SCALE,Do re mi run
+MAJOR,Bright sounding key
+MINOR,Sad sounding key
+TEMPO,Speed of the music
+PITCH,How high or low a note is
+RANGE,Span of a singer's voice
+STALL,Ground floor theatre seat
+ROBIN,Hood who got a musical
+TITLE,Name of the show
