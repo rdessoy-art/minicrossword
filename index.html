@@ -338,8 +338,9 @@
   }
   .stamp .ring.peeked{
     font-size:13px;
-    max-width: 170px;
+    max-width: 210px;
     line-height:1.3;
+    letter-spacing: 0.05em;   /* the wide default tips this label onto 3 ragged lines */
   }
   .stamp .ring .time{
     display:block;
@@ -620,7 +621,7 @@ const state = {
   timerInterval: null,
   solved: false,
   cheated: false,   // set by "Reveal all"  — the whole grid was given away
-  peeked:  false,   // set by "Reveal word" — one or more answers were given
+  peeks:   0,       // how many times "Reveal word" was pressed
   checkedWrong: new Set(),
 };
 
@@ -882,7 +883,11 @@ function currentTimeLabel(){ return timerLabel.textContent; }
    handed over wholesale, so it gets the stronger verdict. */
 function solveVerdict(){
   if(state.cheated) return { stamp:'SOLVED (BUT CHEATED!)', share:'Solved (but cheated!)', soft:false };
-  if(state.peeked)  return { stamp:'SOLVED-cheated a bit',  share:'Solved-cheated a bit',  soft:true };
+  if(state.peeks === 1) return { stamp:'SOLVED-cheated a bit', share:'Solved-cheated a bit', soft:true };
+  if(state.peeks > 1){
+    const n = `cheated ${state.peeks} times`;
+    return { stamp:`SOLVED-${n}`, share:`Solved-${n}`, soft:true };
+  }
   return { stamp:'SOLVED', share:'Solved', soft:false };
 }
 
@@ -956,7 +961,7 @@ document.getElementById('revealBtn').addEventListener('click', ()=>{
     cells[k].classList.add('revealed');
     cells[k].classList.remove('incorrect');
   }
-  state.peeked = true;
+  state.peeks += 1;
   render();
   checkSolved();
 });
@@ -993,7 +998,7 @@ document.getElementById('rebusBtn').addEventListener('click', ()=>{
   state.entries = {};
   state.solved = false;
   state.cheated = false;
-  state.peeked = false;
+  state.peeks = 0;
   state.startTime = null;
   stopTimer();
   timerLabel.textContent = '0:00';
