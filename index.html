@@ -631,6 +631,17 @@ const state = {
    RENDER GRID
    ============================================================ */
 const gridEl = document.getElementById('grid');
+
+/* Re-tapping the selected square flips across/down. That reads as a
+   deliberate second click with a mouse, but on a phone an ordinary tap —
+   to bring the keyboard back, or just after reading the clue — lands on
+   the same square and flips direction unintentionally. Track how the
+   square was hit so the flip stays a mouse affordance; touch users have
+   the A/D badge, which the footer already points at. */
+let lastHitWasTouch = false;
+gridEl.addEventListener('pointerdown', (e)=>{
+  lastHitWasTouch = (e.pointerType === 'touch' || e.pointerType === 'pen');
+}, { passive:true });
 const cells = {};
 
 for(let r=0;r<SIZE;r++){
@@ -705,7 +716,7 @@ function currentClue(){
 function selectCell(r,c, forceKeepDir){
   if(isBlack(r,c)) return;
   const sameCell = state.selected.r===r && state.selected.c===c;
-  if(sameCell && !forceKeepDir){
+  if(sameCell && !forceKeepDir && !lastHitWasTouch){
     // toggle direction if possible
     const k = key(r,c);
     if(cellAcross[k] && cellDown[k]) state.dir = state.dir === 'across' ? 'down' : 'across';
