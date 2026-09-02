@@ -908,7 +908,13 @@ function solveVerdict(){
 function shareText(){
   const day = new Date(SELECTED_DAY).toLocaleDateString('en-US',
     { weekday:'long', month:'long', day:'numeric', year:'numeric', timeZone:'UTC' });
-  return `Vocab Mini\n${day}\n${solveVerdict().share} in ${currentTimeLabel()}`;
+  const theme = (THEMES.find(t => t.id === CURRENT_THEME) || {}).label;
+  return [
+    'Vocab Mini',
+    theme,                                   // dropped if a theme ever lacks a label
+    day,
+    `${solveVerdict().share} in ${currentTimeLabel()}`,
+  ].filter(Boolean).join('\n');
 }
 
 const shareRow = document.getElementById('shareRow');
