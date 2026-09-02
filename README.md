@@ -13,6 +13,7 @@ puzzles/
   general.json              # default theme, 30 puzzles
   motorcycling.json          # example theme, 30 puzzles
   musicals.json              # musical shows and films, 30 puzzles
+  movies.json                # films, 30 puzzles
 tools/
   generate_puzzle.py         # dictionary-backed puzzle generator/solver
   wordlists/
@@ -21,6 +22,7 @@ tools/
     general.csv               # everyday English words for the default theme
     motorcycling.csv          # example theme word list — WORD,clue pairs
     musicals.csv              # musical shows and films
+    movies.csv                # films
 .github/workflows/deploy.yml # auto-publishes to Pages on every push to main
 ```
 
