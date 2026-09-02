@@ -283,6 +283,30 @@
   }
 
   /* ---------- Stamp overlay ---------- */
+  .share-row{
+    display:flex;
+    justify-content:center;
+    margin: 0 0 16px;
+  }
+  /* Same specificity trap as .iconbtn: [hidden] is display:none in the UA
+     sheet, but display:flex here would beat it and the button would show
+     before the puzzle is solved. */
+  .share-row[hidden]{ display:none; }
+  .sharebtn{
+    display:flex; align-items:center; gap:8px;
+    font-family:'Inter',sans-serif; font-weight:600; font-size:13px;
+    padding: 10px 18px;
+    border-radius:8px;
+    border:1px solid var(--green);
+    background: var(--paper-card);
+    color: var(--green);
+    cursor:pointer;
+    transition: background 0.15s, transform 0.08s;
+  }
+  .sharebtn:hover{ background: rgba(47,110,79,0.07); }
+  .sharebtn:active{ transform: translateY(1px); }
+  .sharebtn svg{ width:15px; height:15px; }
+
   .stamp{
     position:absolute;
     inset:0;
@@ -415,6 +439,13 @@
         <span class="time" id="stampTime"></span>
       </div>
     </div>
+  </div>
+
+  <div class="share-row" id="shareRow" hidden>
+    <button class="sharebtn" id="shareBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 15V3"/><path d="m8 7 4-4 4 4"/></svg>
+      <span id="shareBtnLabel">Share result</span>
+    </button>
   </div>
 
   <div class="active-clue">
@@ -829,6 +860,50 @@ function stopTimer(){
 function currentTimeLabel(){ return timerLabel.textContent; }
 
 /* ============================================================
+   SHARE — three lines: the game, the day played, the solve time.
+   Uses the native share sheet where there is one (iOS/Android), and
+   falls back to the clipboard on desktop browsers that lack it.
+   ============================================================ */
+function shareText(){
+  const day = new Date(SELECTED_DAY).toLocaleDateString('en-US',
+    { weekday:'long', month:'long', day:'numeric', year:'numeric', timeZone:'UTC' });
+  return `Vocab Mini\n${day}\nSolved in ${currentTimeLabel()}`;
+}
+
+const shareRow = document.getElementById('shareRow');
+const shareBtnLabel = document.getElementById('shareBtnLabel');
+let shareLabelTimer = null;
+
+function flashShareLabel(msg){
+  clearTimeout(shareLabelTimer);
+  shareBtnLabel.textContent = msg;
+  shareLabelTimer = setTimeout(()=>{ shareBtnLabel.textContent = 'Share result'; }, 2000);
+}
+
+document.getElementById('shareBtn').addEventListener('click', async ()=>{
+  const text = shareText();
+  try{
+    if(navigator.share){
+      await navigator.share({ text });
+      return;
+    }
+    await navigator.clipboard.writeText(text);
+    flashShareLabel('Copied');
+  }catch(err){
+    /* AbortError just means the user dismissed the share sheet — not a
+       failure, and not worth surfacing. Anything else falls back to a
+       manual copy so the result is never trapped in the page. */
+    if(err && err.name === 'AbortError') return;
+    try{
+      await navigator.clipboard.writeText(text);
+      flashShareLabel('Copied');
+    }catch(_){
+      window.prompt('Copy your result:', text.replace(/\n/g, ' — '));
+    }
+  }
+});
+
+/* ============================================================
    CHECK / REVEAL / CLEAR
    ============================================================ */
 document.getElementById('checkBtn').addEventListener('click', ()=>{
@@ -897,6 +972,7 @@ document.getElementById('rebusBtn').addEventListener('click', ()=>{
   stopTimer();
   timerLabel.textContent = '0:00';
   document.getElementById('stamp').classList.remove('show');
+  shareRow.hidden = true;
   document.querySelectorAll('.cell').forEach(d=>d.classList.remove('correct','incorrect','revealed'));
   render();
 });
@@ -917,6 +993,8 @@ function checkSolved(){
   stopTimer();
   document.getElementById('stampTime').textContent = currentTimeLabel();
   document.getElementById('stamp').classList.add('show');
+  shareBtnLabel.textContent = 'Share result';
+  shareRow.hidden = false;
   document.querySelectorAll('.cell').forEach(d=>{
     if(!d.classList.contains('black')) d.classList.add('correct');
   });
