@@ -1,0 +1,185 @@
+# movies.csv — word,clue
+# Films: titles, characters, directors, stars and the craft of film-making.
+# Only 3-5 letter words are ever placed on the 5x5 grid; each puzzle needs
+# six 5-letter / two 4-letter / two 3-letter answers, so 5s matter most.
+# Longer titles (TITANIC AVATAR PSYCHO VERTIGO GLADIATOR) can't be used at
+# this grid size — clue them through a shorter part instead.
+# Clues must not contain commas — the loader reads row[1] only.
+
+# --- three letters ---
+CUT,Editor's snip
+SET,Where filming happens
+LOT,Studio backlot
+PAN,Sweep the camera across
+MIC,Sound recordist's tool
+CGI,Computer effects in short
+MGM,Studio with the roaring lion
+FOX,Studio once called 20th Century
+SPY,Bond's line of work
+HAN,Solo of Star Wars
+RON,Weasley of Hogwarts
+OWL,Harry Potter's post carrier
+ELF,Christmas comedy with Will Ferrell
+TOY,___ Story from Pixar
+FAN,Devoted follower
+HIT,Box office smash
+RUN,How long a film stays on
+ACE,___ Ventura the pet detective
+JAW,Part of a shark
+DUB,Replace the dialogue
+BIT,Small part
+ROW,Where your seat is
+POP,What the corn does
+BOX,___ office
+
+# --- four letters ---
+JAWS,Spielberg's shark thriller
+ARGO,Best Picture set in Tehran
+HEAT,Pacino and De Niro crime epic
+DUNE,Desert epic of Arrakis
+CARS,Pixar film full of vehicles
+COCO,Pixar film set in Mexico
+NEMO,Fish that gets found
+DORY,Forgetful blue fish
+BUZZ,Lightyear of Toy Story
+YODA,Small green Jedi master
+JEDI,Return of the ___
+SITH,Dark side order
+EWOK,Furry Endor native
+LEIA,Star Wars princess
+LUKE,Skywalker of Star Wars
+THOR,Marvel god of thunder
+HULK,Big green Marvel hero
+LOKI,Thor's trickster brother
+IRON,___ Man of Marvel
+ORCS,Tolkien's foot soldiers
+RING,The Lord of the ___
+WAND,Wizard's tool
+BOLT,Disney film about a screen dog
+TAXI,___ Driver with De Niro
+ROPE,Hitchcock film shot in long takes
+BOND,007 himself
+SEAN,Connery who played Bond
+FORD,Harrison of Indiana Jones
+PITT,Brad of Fight Club
+BRAD,Pitt's first name
+MATT,Damon of the Bourne films
+WILL,Smith of Men in Black
+JOHN,Wayne of the westerns
+CARY,Grant of North by Northwest
+KATE,Winslet of Titanic
+WALT,Disney the founder
+COEN,Brothers behind Fargo
+LEAN,David of Lawrence of Arabia
+IMAX,Very large screen format
+NOIR,Shadowy crime genre
+EPIC,Sweeping film on a grand scale
+TAKE,One attempt at a shot
+SHOT,Single camera setup
+EDIT,Cut it together
+LENS,Glass on the camera
+ZOOM,Move in close
+PLOT,How the story goes
+CREW,Everyone behind the camera
+STAR,Top-billed name
+CAST,Everyone in front of the camera
+ROLE,Part being played
+LEAD,Main part
+HERO,The good one
+FILM,What you are watching
+REEL,Spool of film
+BOOM,Microphone on a long arm
+CLAP,___ board that marks a take
+WRAP,That's a ___ for the day
+CLIP,Short extract
+SEAT,Where you sit in the dark
+DEPP,Johnny of Pirates of the Caribbean
+
+# --- five letters ---
+ALIEN,Ridley Scott space horror
+ROCKY,Boxing film with Stallone
+FARGO,Coen brothers film in the snow
+SEVEN,Fincher thriller of deadly sins
+GHOST,Swayze and Moore romance
+BRAVE,Pixar film set in Scotland
+DUMBO,Disney elephant with big ears
+BAMBI,Disney fawn
+MULAN,Disney heroine who joins the army
+SHREK,Ogre in a green DreamWorks film
+GIANT,Texas epic with James Dean
+BIRDS,Hitchcock film of attacking flocks
+GLORY,Civil War film with Denzel Washington
+DRIVE,Gosling film with a getaway driver
+LOGAN,Wolverine's last outing
+JOKER,Batman's grinning enemy
+WOODY,Cowboy doll in Toy Story
+STORY,Toy ___
+ROBOT,Mechanical screen character
+VADER,Star Wars villain in black
+DROID,Star Wars machine like R2-D2
+FORCE,May the ___ be with you
+REBEL,___ Without a Cause
+FRODO,Hobbit who carries the ring
+BILBO,Frodo's uncle
+SHIRE,Hobbit homeland
+ASLAN,Narnia's lion
+HARRY,Potter the boy wizard
+SNAPE,Hogwarts potions master
+JAMES,Bond's first name
+MOORE,Roger who played Bond
+ROGER,Moore of the Bond films
+CRAIG,Daniel who played Bond
+HANKS,Tom of Forrest Gump
+MERYL,Streep the actress
+DAMON,Matt of the Bourne films
+SMITH,Will of Independence Day
+STEVE,McQueen the cool one
+CLINT,Eastwood of the westerns
+WAYNE,John of True Grit
+GRANT,Cary of Notorious
+DAVIS,Bette the screen legend
+BETTE,Davis of All About Eve
+GARBO,Greta who wanted to be alone
+GRETA,Garbo of the silent era
+LEIGH,Vivien of Gone with the Wind
+LUCAS,George who made Star Wars
+NOLAN,Christopher of Inception
+SCOTT,Ridley of Blade Runner
+ORSON,Welles of Citizen Kane
+HITCH,Nickname of the master of suspense
+CAPRA,Frank of It's a Wonderful Life
+BILLY,Wilder of Some Like It Hot
+PIXAR,Animation studio behind Up
+OSCAR,Academy Award
+BAFTA,British film award
+INDIE,Made outside the big studios
+ODEON,Cinema chain in Britain
+SCENE,Part of the film
+SHOTS,Camera setups
+TAKES,Attempts at a shot
+SLATE,Board clapped before a take
+ANGLE,Where the camera looks from
+FOCUS,What you sharpen the lens for
+FRAME,Single image of film
+TWIST,Surprise turn in the plot
+CAMEO,Brief appearance by someone famous
+EXTRA,Performer with no lines
+STUNT,Dangerous bit done by a double
+SCORE,The film's music
+SOUND,What the boom picks up
+GENRE,Kind of film
+DRAMA,Serious picture
+SHORT,Film under forty minutes
+TITLE,The film's name
+ACTOR,One in the cast
+LINES,What the cast learn
+SEATS,Rows in the auditorium
+AISLE,Walkway between the seats
+PRINT,Copy of a film sent to cinemas
+SPOOL,What film winds onto
+FILMS,Pictures
+ROLES,Parts played
+STARS,Big names
+USHER,One with a torch in the aisle
+SUPER,Marvel hero prefix
+DEBUT,First film
