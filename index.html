@@ -329,6 +329,13 @@
     background: rgba(255,253,248,0.92);
     text-align:center;
   }
+  /* "SOLVED (BUT CHEATED!)" is far longer than "SOLVED" — let it wrap onto
+     two lines inside the stamp instead of stretching it across the grid. */
+  .stamp .ring.cheated{
+    font-size:12px;
+    max-width: 150px;
+    line-height:1.35;
+  }
   .stamp .ring .time{
     display:block;
     font-size:12px;
@@ -435,7 +442,7 @@
   <div class="grid-wrap">
     <div class="grid" id="grid"></div>
     <div class="stamp" id="stamp">
-      <div class="ring">SOLVED
+      <div class="ring" id="stampRing"><span id="stampLabel">SOLVED</span>
         <span class="time" id="stampTime"></span>
       </div>
     </div>
@@ -607,6 +614,7 @@ const state = {
   startTime: null,
   timerInterval: null,
   solved: false,
+  cheated: false,   // set by "Reveal all" — the solve wasn't earned
   checkedWrong: new Set(),
 };
 
@@ -867,7 +875,8 @@ function currentTimeLabel(){ return timerLabel.textContent; }
 function shareText(){
   const day = new Date(SELECTED_DAY).toLocaleDateString('en-US',
     { weekday:'long', month:'long', day:'numeric', year:'numeric', timeZone:'UTC' });
-  return `Vocab Mini\n${day}\nSolved in ${currentTimeLabel()}`;
+  const verdict = state.cheated ? 'Solved (but cheated!)' : 'Solved';
+  return `Vocab Mini\n${day}\n${verdict} in ${currentTimeLabel()}`;
 }
 
 const shareRow = document.getElementById('shareRow');
@@ -947,6 +956,7 @@ document.getElementById('solveBtn').addEventListener('click', ()=>{
       cells[k].classList.add('revealed');
     }
   }
+  state.cheated = true;
   render();
   checkSolved();
 });
@@ -968,6 +978,7 @@ document.getElementById('rebusBtn').addEventListener('click', ()=>{
   if(!confirm('Restart the puzzle? This clears all your progress.')) return;
   state.entries = {};
   state.solved = false;
+  state.cheated = false;
   state.startTime = null;
   stopTimer();
   timerLabel.textContent = '0:00';
@@ -991,6 +1002,9 @@ function checkSolved(){
   }
   state.solved = true;
   stopTimer();
+  document.getElementById('stampLabel').textContent =
+    state.cheated ? 'SOLVED (BUT CHEATED!)' : 'SOLVED';
+  document.getElementById('stampRing').classList.toggle('cheated', state.cheated);
   document.getElementById('stampTime').textContent = currentTimeLabel();
   document.getElementById('stamp').classList.add('show');
   shareBtnLabel.textContent = 'Share result';
