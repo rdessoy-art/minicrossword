@@ -336,6 +336,11 @@
     max-width: 150px;
     line-height:1.35;
   }
+  .stamp .ring.peeked{
+    font-size:13px;
+    max-width: 170px;
+    line-height:1.3;
+  }
   .stamp .ring .time{
     display:block;
     font-size:12px;
@@ -614,7 +619,8 @@ const state = {
   startTime: null,
   timerInterval: null,
   solved: false,
-  cheated: false,   // set by "Reveal all" — the solve wasn't earned
+  cheated: false,   // set by "Reveal all"  — the whole grid was given away
+  peeked:  false,   // set by "Reveal word" — one or more answers were given
   checkedWrong: new Set(),
 };
 
@@ -872,11 +878,18 @@ function currentTimeLabel(){ return timerLabel.textContent; }
    Uses the native share sheet where there is one (iOS/Android), and
    falls back to the clipboard on desktop browsers that lack it.
    ============================================================ */
+/* Reveal all outranks Reveal word: if both were used, the grid was still
+   handed over wholesale, so it gets the stronger verdict. */
+function solveVerdict(){
+  if(state.cheated) return { stamp:'SOLVED (BUT CHEATED!)', share:'Solved (but cheated!)', soft:false };
+  if(state.peeked)  return { stamp:'SOLVED-cheated a bit',  share:'Solved-cheated a bit',  soft:true };
+  return { stamp:'SOLVED', share:'Solved', soft:false };
+}
+
 function shareText(){
   const day = new Date(SELECTED_DAY).toLocaleDateString('en-US',
     { weekday:'long', month:'long', day:'numeric', year:'numeric', timeZone:'UTC' });
-  const verdict = state.cheated ? 'Solved (but cheated!)' : 'Solved';
-  return `Vocab Mini\n${day}\n${verdict} in ${currentTimeLabel()}`;
+  return `Vocab Mini\n${day}\n${solveVerdict().share} in ${currentTimeLabel()}`;
 }
 
 const shareRow = document.getElementById('shareRow');
@@ -943,6 +956,7 @@ document.getElementById('revealBtn').addEventListener('click', ()=>{
     cells[k].classList.add('revealed');
     cells[k].classList.remove('incorrect');
   }
+  state.peeked = true;
   render();
   checkSolved();
 });
@@ -979,6 +993,7 @@ document.getElementById('rebusBtn').addEventListener('click', ()=>{
   state.entries = {};
   state.solved = false;
   state.cheated = false;
+  state.peeked = false;
   state.startTime = null;
   stopTimer();
   timerLabel.textContent = '0:00';
@@ -1002,9 +1017,10 @@ function checkSolved(){
   }
   state.solved = true;
   stopTimer();
-  document.getElementById('stampLabel').textContent =
-    state.cheated ? 'SOLVED (BUT CHEATED!)' : 'SOLVED';
+  const verdict = solveVerdict();
+  document.getElementById('stampLabel').textContent = verdict.stamp;
   document.getElementById('stampRing').classList.toggle('cheated', state.cheated);
+  document.getElementById('stampRing').classList.toggle('peeked', verdict.soft);
   document.getElementById('stampTime').textContent = currentTimeLabel();
   document.getElementById('stamp').classList.add('show');
   shareBtnLabel.textContent = 'Share result';
