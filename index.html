@@ -621,7 +621,9 @@ const state = {
   timerInterval: null,
   solved: false,
   cheated: false,   // set by "Reveal all"  — the whole grid was given away
-  peeks:   0,       // how many times "Reveal word" was pressed
+  peeked:  new Set(),  // which words "Reveal word" gave away, as "dir:num".
+                       // A set, not a tally: revealing the same answer twice
+                       // is no more help than revealing it once.
   checkedWrong: new Set(),
 };
 
@@ -883,9 +885,10 @@ function currentTimeLabel(){ return timerLabel.textContent; }
    handed over wholesale, so it gets the stronger verdict. */
 function solveVerdict(){
   if(state.cheated) return { stamp:'SOLVED (BUT CHEATED!)', share:'Solved (but cheated!)', soft:false };
-  if(state.peeks === 1) return { stamp:'SOLVED-cheated a bit', share:'Solved-cheated a bit', soft:true };
-  if(state.peeks > 1){
-    const n = `cheated ${state.peeks} times`;
+  const peeks = state.peeked.size;
+  if(peeks === 1) return { stamp:'SOLVED-cheated a bit', share:'Solved-cheated a bit', soft:true };
+  if(peeks > 1){
+    const n = `cheated ${peeks} times`;
     return { stamp:`SOLVED-${n}`, share:`Solved-${n}`, soft:true };
   }
   return { stamp:'SOLVED', share:'Solved', soft:false };
@@ -961,7 +964,7 @@ document.getElementById('revealBtn').addEventListener('click', ()=>{
     cells[k].classList.add('revealed');
     cells[k].classList.remove('incorrect');
   }
-  state.peeks += 1;
+  state.peeked.add(`${state.dir}:${cl.num}`);
   render();
   checkSolved();
 });
@@ -998,7 +1001,7 @@ document.getElementById('rebusBtn').addEventListener('click', ()=>{
   state.entries = {};
   state.solved = false;
   state.cheated = false;
-  state.peeks = 0;
+  state.peeked = new Set();
   state.startTime = null;
   stopTimer();
   timerLabel.textContent = '0:00';
