@@ -907,6 +907,17 @@ function solveVerdict(){
   return { stamp:'SOLVED', share:'Solved', soft:false };
 }
 
+/* Link to the exact puzzle the message describes, theme and day pinned.
+   Without the date a recipient opening it tomorrow would get a different
+   puzzle from the one whose time is quoted above it. Built from origin +
+   pathname so any existing query or hash is dropped rather than carried. */
+function shareUrl(){
+  const u = new URL(location.origin + location.pathname);
+  u.searchParams.set('theme', CURRENT_THEME);
+  u.searchParams.set('date', toISODate(SELECTED_DAY));
+  return u.toString();
+}
+
 function shareText(){
   const day = new Date(SELECTED_DAY).toLocaleDateString('en-US',
     { weekday:'long', month:'long', day:'numeric', year:'numeric', timeZone:'UTC' });
@@ -916,6 +927,7 @@ function shareText(){
     theme,                                   // dropped if a theme ever lacks a label
     day,
     `${solveVerdict().share} in ${currentTimeLabel()}`,
+    shareUrl(),
   ].filter(Boolean).join('\n');
 }
 
